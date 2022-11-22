@@ -95,13 +95,11 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Task":{
+		'after_insert': 'hackon.hackon.utils.project_template'
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -173,8 +171,10 @@ user_data_fields = [
 ]
 
 fixtures = [
-		{"dt": "Role","filters": [["name", "in", ['Participant']]]},
-		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant']]]}
+		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge','Team Lead']]]},
+		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge','Team Lead']]]},
+		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed"]]]},
+		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow"]]]}
 	]
 
 # Authentication and authorization
