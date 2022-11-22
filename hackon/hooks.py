@@ -171,8 +171,10 @@ user_data_fields = [
 ]
 
 fixtures = [
-		{"dt": "Role","filters": [["name", "in", ['Participant']]]},
-		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant']]]}
+		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge']]]},
+		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge']]]},
+		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed"]]]},
+		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow"]]]}
 	]
 
 # Authentication and authorization
