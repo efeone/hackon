@@ -172,10 +172,14 @@ user_data_fields = [
 	}
 ]
 
+fixtures = [
+		{"dt": "Role","filters": [["name", "in", ['Participant']]]},
+		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant']]]}
+	]
+
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
 #	"hackon.auth.validate"
 # ]
-
