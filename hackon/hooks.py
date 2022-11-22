@@ -171,8 +171,8 @@ user_data_fields = [
 ]
 
 fixtures = [
-		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor']]]},
-		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor']]]},
+		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer']]]},
+		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer']]]},
 		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed"]]]},
 		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow"]]]}
 	]
