@@ -9,6 +9,17 @@ class Team(Document):
 	pass
 
 @frappe.whitelist()
+def change_team_lead(new_team_lead, name):
+	if frappe.db.exists('Team', name):
+		doc_name = frappe.get_doc('Team',name)
+		doc_name.team_lead = new_team_lead
+		doc_name.save()
+		return True
+
+
+
+
+@frappe.whitelist()
 def create_project_custom_button(source_name, target_doc = None):
 	doc = get_mapped_doc(
         'Team',

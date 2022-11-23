@@ -9,6 +9,7 @@
  "field_order": [
   "team_name",
   "team_id",
+  "team_lead",
   "no_of_team_members",
   "column_break_4",
   "event",
@@ -66,11 +67,17 @@
    "options": "Team",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "team_lead",
+   "fieldtype": "Data",
+   "label": "Team Lead",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-21 14:31:11.002679",
+ "modified": "2022-11-23 12:11:51.048993",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
