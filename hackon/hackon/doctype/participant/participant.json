@@ -33,6 +33,8 @@
   "event",
   "column_break_26",
   "team",
+  "column_break_28",
+  "score",
   "amended_from"
  ],
  "fields": [
@@ -205,12 +207,21 @@
   {
    "fieldname": "column_break_26",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "score",
+   "fieldtype": "Float",
+   "label": "Score"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-22 11:41:25.230148",
+ "modified": "2022-11-23 11:03:44.024245",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
