@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "P.####",
  "creation": "2022-11-18 10:08:50.765683",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -34,7 +35,7 @@
   "column_break_26",
   "team",
   "column_break_28",
-  "score",
+  "participant_score",
   "amended_from"
  ],
  "fields": [
@@ -183,7 +184,8 @@
    "fieldname": "event",
    "fieldtype": "Link",
    "label": "Event",
-   "options": "Event"
+   "options": "Event",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_24",
@@ -193,7 +195,8 @@
    "fieldname": "team",
    "fieldtype": "Link",
    "label": "Team",
-   "options": "Team"
+   "options": "Team",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -213,15 +216,19 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "score",
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "participant_score",
    "fieldtype": "Float",
-   "label": "Score"
+   "label": "Participant Score",
+   "permlevel": 1,
+   "precision": "1"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-23 11:03:44.024245",
+ "modified": "2022-11-25 14:33:04.698092",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
