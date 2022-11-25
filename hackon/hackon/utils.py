@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils import *
 
 @frappe.whitelist()
 def project_template(doc, method = None):
@@ -45,7 +46,27 @@ def get_total_team_score(project):
             tabTask
         WHERE
             project = %(project)s
-
     """
     doc_list = frappe.db.sql(query.format(),{ 'project' : project }, as_dict = 1)
     return (doc_list[0].total_task_score)
+
+
+#Validation of Events#
+@frappe.whitelist()
+def event_scheduler():
+    '''Method to validate event based on date'''
+    events = frappe.db.get_all('Event', filters = {'status': 'Open'})
+    if events:
+        today = getdate(frappe.utils.today())
+        for event in events:
+            event_doc = frappe.get_doc('Event', event.name)
+            due_date = getdate(event_doc.ends_on)
+            if due_date < today:
+                change_event_status(event_doc)
+
+def change_event_status(doc):
+    '''method to change the status of event
+       args: doc:event document
+    '''
+    frappe.db.set_value(doc.doctype, doc.name, 'status', 'Closed')
+    frappe.db.commit()
