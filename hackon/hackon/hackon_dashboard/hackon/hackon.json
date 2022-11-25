@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Team Score Details",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-11-24 16:27:49.921747",
+ "dashboard_name": "Hackon",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2022-11-25 10:46:13.971183",
+ "modified_by": "Administrator",
+ "module": "Hackon",
+ "name": "Hackon",
+ "owner": "Administrator"
+}
