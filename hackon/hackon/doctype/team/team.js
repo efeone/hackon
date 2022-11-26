@@ -4,21 +4,23 @@
 frappe.ui.form.on('Team', {
 	refresh: function(frm) {
 		let roles = frappe.user_roles
-    	if(roles.includes("Participant") && !frm.is_new()){
+		if(roles.includes("Participant") && !frm.is_new()){
 			frm.add_custom_button ("Change Team Lead", () => {
-			new_team_lead(frm)
-		})
+				new_team_lead(frm);
+			});
+		}
+		if(!frm.is_new()){
+			frm.add_custom_button('Create Project', () => {
+				frappe.model.open_mapped_doc({
+					method: 'hackon.hackon.doctype.team.team.create_project_custom_button',
+					frm: cur_frm
+				});
+			});
+		}
 	}
-		frm.add_custom_button('Create Project', () => {
-      frappe.model.open_mapped_doc({
-                        method: 'hackon.hackon.doctype.team.team.create_project_custom_button',
-                        frm: cur_frm,
-        })
-		})
-}
- });
+});
 
- function new_team_lead(frm){
+function new_team_lead(frm){
 	 let d = new frappe.ui.Dialog({
     	title: 'Change Team Lead',
 	    fields: [
@@ -49,4 +51,4 @@ frappe.ui.form.on('Team', {
 		   }
 	  });
 	  d.show();
-	 }
+}
