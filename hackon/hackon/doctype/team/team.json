@@ -7,15 +7,18 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "team_name",
+  "team_details_section",
   "team_id",
+  "team_name",
   "team_lead",
   "no_of_team_members",
   "column_break_4",
   "event",
   "mentor",
   "team_score",
-  "amended_from"
+  "amended_from",
+  "participant_details_section",
+  "team_participants"
  ],
  "fields": [
   {
@@ -73,11 +76,27 @@
    "fieldtype": "Data",
    "label": "Team Lead",
    "read_only": 1
+  },
+  {
+   "fieldname": "team_details_section",
+   "fieldtype": "Section Break",
+   "label": "Team Details"
+  },
+  {
+   "fieldname": "team_participants",
+   "fieldtype": "Table",
+   "label": "Team Participants",
+   "options": "Team Participants"
+  },
+  {
+   "fieldname": "participant_details_section",
+   "fieldtype": "Section Break",
+   "label": "Participant Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-23 12:11:51.048993",
+ "modified": "2022-11-26 11:36:23.339940",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
