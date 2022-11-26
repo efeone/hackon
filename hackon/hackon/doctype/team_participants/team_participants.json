@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-11-26 11:29:35.620073",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "participant_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "participant_name",
+   "fieldtype": "Link",
+   "label": "Participant Name",
+   "options": "Participant"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-26 11:33:38.651561",
+ "modified_by": "Administrator",
+ "module": "Hackon",
+ "name": "Team Participants",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
