@@ -6,7 +6,13 @@ from frappe.model.mapper import *
 from frappe.model.document import Document
 
 class Team(Document):
-	pass
+	def validate(self):
+		self.check_team_lead()
+	def check_team_lead(self):
+		if frappe.db.exists('Participant',  {'team_lead':0 , 'team':self.name}):
+			participant_doc = frappe.db.get_last_doc('Participant', filters = {'team_lead':0, 'team':self.name})
+			frappe.db.set_value('Participant', participant_doc.name,'team_lead',1)
+
 
 @frappe.whitelist()
 def change_team_lead(new_team_lead, name):
@@ -14,6 +20,11 @@ def change_team_lead(new_team_lead, name):
 		doc_name = frappe.get_doc('Team',name)
 		doc_name.team_lead = new_team_lead
 		doc_name.save()
+		if doc_name.team_lead:
+			frappe.db.set_value('Participant',doc_name.team_lead,'team_lead',0)
+			doc_name.team_lead = new_team_lead
+			frappe.db.set_value('Participant',new_team_lead,'team_lead',1)
+			doc_name.save()
 		return True
 
 @frappe.whitelist()
