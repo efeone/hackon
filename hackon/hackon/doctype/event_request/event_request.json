@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "ER:####",
+ "autoname": "naming_series:",
  "creation": "2022-11-28 12:16:09.245906",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "series",
+  "naming_series",
   "event_name",
   "subject",
   "venue",
@@ -139,18 +139,19 @@
    "label": "Maximum Allowed Team"
   },
   {
-   "fieldname": "series",
+   "default": "ER-.",
+   "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
    "no_copy": 1,
-   "options": "ER",
+   "options": "ER-.",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-28 14:06:14.998891",
+ "modified": "2022-11-28 14:54:05.792737",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
