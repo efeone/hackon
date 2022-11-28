@@ -1,0 +1,48 @@
+{
+ "category": "Modules",
+ "charts": [
+  {
+   "chart_name": "Team Score Details",
+   "label": "Team Score Details"
+  }
+ ],
+ "creation": "2022-11-26 14:49:16.431075",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Hackon",
+ "links": [],
+ "modified": "2022-11-28 10:26:37.818876",
+ "modified_by": "Administrator",
+ "module": "Hackon",
+ "name": "Hackon",
+ "owner": "admin@efeone.com",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Team",
+   "link_to": "Team",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Event",
+   "link_to": "Event",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Participant",
+   "link_to": "Participant",
+   "type": "DocType"
+  }
+ ]
+}
