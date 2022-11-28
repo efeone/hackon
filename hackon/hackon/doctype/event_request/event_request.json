@@ -7,6 +7,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "series",
   "event_name",
   "subject",
   "venue",
@@ -136,12 +137,20 @@
    "fieldname": "maximum_allowed_team",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team"
+  },
+  {
+   "fieldname": "series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "ER",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-28 12:58:46.843924",
+ "modified": "2022-11-28 14:06:14.998891",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
