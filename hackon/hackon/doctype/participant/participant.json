@@ -128,6 +128,7 @@
    "options": "Student\nEmployed\nUnemployed"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "team_lead",
    "fieldtype": "Check",
@@ -203,7 +204,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< Updated upstream
  "modified": "2022-11-26 17:22:58.131297",
+=======
+ "modified": "2022-11-28 15:46:54.648071",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
