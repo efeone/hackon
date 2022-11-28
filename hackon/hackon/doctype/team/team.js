@@ -17,6 +17,11 @@ frappe.ui.form.on('Team', {
 				});
 			});
 		}
+		frm.set_query('mentor', function() {
+		return {
+				query : 'hackon.hackon.doctype.team.team.mentor_user_query',
+		}
+  })
 	}
 });
 
