@@ -16,26 +16,32 @@
   {
    "fieldname": "institution_name",
    "fieldtype": "Data",
-   "label": "Institution Name"
+   "in_list_view": 1,
+   "label": "Institution Name",
+   "reqd": 1
   },
   {
    "fieldname": "university",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "University"
   },
   {
    "fieldname": "grade",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Grade"
   },
   {
    "fieldname": "year_of__passing",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Year Of  Passing"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "\nUnder Graduate\nGraduate\nPost Graduate"
   }
@@ -43,7 +49,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-11-18 10:53:58.416431",
+ "modified": "2022-11-26 16:58:31.775199",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Education History",

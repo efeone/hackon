@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "TM.####",
  "creation": "2022-11-21 12:30:28.091119",
  "doctype": "DocType",
@@ -8,17 +7,16 @@
  "engine": "InnoDB",
  "field_order": [
   "team_details_section",
-  "team_id",
   "team_name",
-  "team_lead",
-  "no_of_team_members",
+  "team_score",
+  "total_active_members",
   "column_break_4",
   "event",
   "mentor",
-  "team_score",
+  "team_lead",
   "amended_from",
   "participant_details_section",
-  "team_participants"
+  "participants"
  ],
  "fields": [
   {
@@ -29,18 +27,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "team_id",
-   "fieldtype": "Data",
-   "label": "Team ID"
-  },
-  {
-   "fieldname": "no_of_team_members",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "No of Team Members",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
   },
@@ -48,7 +34,8 @@
    "fieldname": "event",
    "fieldtype": "Link",
    "label": "Event",
-   "options": "Event"
+   "options": "Event",
+   "reqd": 1
   },
   {
    "fieldname": "mentor",
@@ -58,9 +45,11 @@
    "options": "User"
   },
   {
+   "default": "0",
    "fieldname": "team_score",
    "fieldtype": "Float",
-   "label": "Team Score"
+   "label": "Team Score",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -73,8 +62,9 @@
   },
   {
    "fieldname": "team_lead",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Team Lead",
+   "options": "Participant",
    "read_only": 1
   },
   {
@@ -83,23 +73,32 @@
    "label": "Team Details"
   },
   {
-   "fieldname": "team_participants",
-   "fieldtype": "Table",
-   "label": "Team Participants",
-   "options": "Team Participants"
-  },
-  {
    "fieldname": "participant_details_section",
    "fieldtype": "Section Break",
    "label": "Participant Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_active_members",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Active Members",
+   "read_only": 1
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Team Participant"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-26 11:36:23.339940",
+ "modified": "2022-11-26 16:44:40.856799",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
+ "name_case": "Title Case",
  "owner": "Administrator",
  "permissions": [
   {

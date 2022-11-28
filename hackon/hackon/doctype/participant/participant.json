@@ -12,30 +12,25 @@
   "first_name",
   "middle_name",
   "last_name",
+  "full_name",
   "column_break_5",
   "email",
   "phone_no",
-  "more_info_section",
-  "bio",
-  "column_break_12",
   "date_of_birth",
-  "gender",
   "location",
+  "gender",
   "educational_details_section",
-  "institution_name",
-  "hobby",
-  "column_break_17",
-  "employment_status",
-  "area_of_interest",
-  "team_lead",
-  "section_break_20",
-  "education_history",
-  "section_break_24",
   "event",
+  "team_lead",
   "column_break_26",
   "team",
-  "column_break_28",
   "participant_score",
+  "section_break_20",
+  "area_of_interest",
+  "institution_name",
+  "hobbies",
+  "employment_status",
+  "education_history",
   "amended_from"
  ],
  "fields": [
@@ -50,8 +45,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "First Name",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fetch_from": "user.middle_name",
@@ -78,21 +72,16 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fetch_from": "user.mobile_no",
    "fieldname": "phone_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Phone No",
+   "options": "Phone",
    "read_only": 1
-  },
-  {
-   "fieldname": "more_info_section",
-   "fieldtype": "Section Break",
-   "label": "More Info"
   },
   {
    "fetch_from": "user.gender",
@@ -109,16 +98,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_12",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "user.bio",
-   "fieldname": "bio",
-   "fieldtype": "Small Text",
-   "label": "Bio"
-  },
-  {
    "fieldname": "educational_details_section",
    "fieldtype": "Section Break",
    "label": "Other Details"
@@ -127,7 +106,8 @@
    "fieldname": "user",
    "fieldtype": "Link",
    "label": "User",
-   "options": "User"
+   "options": "User",
+   "reqd": 1
   },
   {
    "fetch_from": "user.birth_date",
@@ -140,10 +120,6 @@
    "fieldname": "institution_name",
    "fieldtype": "Data",
    "label": "Institution name"
-  },
-  {
-   "fieldname": "column_break_17",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "employment_status",
@@ -176,20 +152,11 @@
    "read_only": 1
   },
   {
-   "fieldname": "hobby",
-   "fieldtype": "Data",
-   "label": "Hobby"
-  },
-  {
    "fieldname": "event",
    "fieldtype": "Link",
    "label": "Event",
    "options": "Event",
    "reqd": 1
-  },
-  {
-   "fieldname": "section_break_24",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "team",
@@ -212,10 +179,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_28",
-   "fieldtype": "Column Break"
-  },
-  {
    "allow_on_submit": 1,
    "default": "0",
    "fieldname": "participant_score",
@@ -223,12 +186,24 @@
    "label": "Participant Score",
    "permlevel": 1,
    "precision": "1"
+  },
+  {
+   "fetch_from": "user.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hobbies",
+   "fieldtype": "Data",
+   "label": "Hobbies"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-25 14:33:04.698092",
+ "modified": "2022-11-26 17:22:58.131297",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
