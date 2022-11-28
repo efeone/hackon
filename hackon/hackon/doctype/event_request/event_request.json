@@ -1,0 +1,167 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ER:####",
+ "creation": "2022-11-28 12:16:09.245906",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_name",
+  "subject",
+  "venue",
+  "published",
+  "column_break_5",
+  "start_on",
+  "end_on",
+  "registration_details_section",
+  "registration_starts_on",
+  "mode",
+  "maximum_allowed_member_in_a_team",
+  "no_of_participants_registered",
+  "project_template",
+  "column_break_13",
+  "registration_ends_on",
+  "status",
+  "maximum_allowed_team",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Event Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Event Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Small Text",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Data",
+   "label": "Venue"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_on",
+   "fieldtype": "Datetime",
+   "label": "Starts on",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_on",
+   "fieldtype": "Datetime",
+   "label": "Ends on"
+  },
+  {
+   "fieldname": "registration_details_section",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "registration_starts_on",
+   "fieldtype": "Data",
+   "label": "Registration Starts On"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "Online\nOffline"
+  },
+  {
+   "fieldname": "maximum_allowed_member_in_a_team",
+   "fieldtype": "Int",
+   "label": "Maximum Allowed Member in a Team",
+   "permlevel": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_participants_registered",
+   "fieldtype": "Int",
+   "label": "No of Participants Registered",
+   "permlevel": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_template",
+   "fieldtype": "Link",
+   "label": "Project Template",
+   "options": "Project Template"
+  },
+  {
+   "fieldname": "registration_ends_on",
+   "fieldtype": "Date",
+   "label": "Registration Ends On"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nClosed"
+  },
+  {
+   "default": "0",
+   "fieldname": "maximum_allowed_team",
+   "fieldtype": "Int",
+   "label": "Maximum Allowed Team"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-28 12:58:46.843924",
+ "modified_by": "Administrator",
+ "module": "Hackon",
+ "name": "Event Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
