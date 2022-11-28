@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "TL.####",
+ "autoname": "SL.####",
  "creation": "2022-11-23 15:01:42.958171",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -12,12 +12,14 @@
   {
    "fieldname": "tool_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Tool Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-23 15:03:51.266000",
+ "modified": "2022-11-28 12:16:35.699781",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Software Tool",
