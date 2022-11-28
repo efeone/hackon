@@ -16,9 +16,6 @@ def change_team_lead(new_team_lead, name):
 		doc_name.save()
 		return True
 
-
-
-
 @frappe.whitelist()
 def create_project_custom_button(source_name, target_doc = None):
 	doc = get_mapped_doc(
@@ -30,3 +27,19 @@ def create_project_custom_button(source_name, target_doc = None):
         }
         })
 	return doc
+
+@frappe.whitelist()
+def mentor_user_query(doctype, txt, searchfield, start, page_len, filters):
+    return frappe.db.sql("""
+        SELECT
+            u.name
+        FROM
+            `tabUser` u ,
+            `tabHas Role` r
+        WHERE
+            u.name = r.parent and
+            u.name != 'Administrator' and
+            r.role = 'Mentor' and
+            u.enabled = 1 and
+            u.name like %s
+    """, ("%" + txt + "%"))
