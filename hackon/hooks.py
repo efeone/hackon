@@ -98,7 +98,7 @@ app_license = "MIT"
 doc_events = {
 	"Task":{
 		'after_insert': 'hackon.hackon.utils.project_template',
-		'validate':[
+		'on_update':[
 			'hackon.hackon.utils.update_team_score_to_project',
 			'hackon.hackon.utils.update_team_score_to_team'
 			]
