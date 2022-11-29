@@ -128,10 +128,12 @@
    "options": "Student\nEmployed\nUnemployed"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "team_lead",
    "fieldtype": "Check",
-   "label": "Team Lead"
+   "label": "Team Lead",
+   "read_only": 1
   },
   {
    "fieldname": "education_history",
@@ -203,7 +205,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-26 17:22:58.131297",
+ "modified": "2022-11-28 17:08:21.539364",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
