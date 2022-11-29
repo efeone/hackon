@@ -31,7 +31,10 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/event.js"}
+doctype_js = {
+	"Project" : "public/js/project.js",
+	"Task" : "public/js/task.js"
+	}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -102,7 +105,7 @@ doc_events = {
 			'hackon.hackon.utils.update_team_score_to_project',
 			'hackon.hackon.utils.update_team_score_to_team'
 			]
-	}
+	},
 }
 
 # Scheduled Tasks
