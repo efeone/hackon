@@ -1,0 +1,37 @@
+{
+ "chart_name": "Participant Activity",
+ "chart_type": "Report",
+ "creation": "2022-11-30 14:21:05.737833",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2022-11-30 14:31:57.493280",
+ "modified_by": "Administrator",
+ "module": "Hackon",
+ "name": "Participant Activity",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "User Activity Log",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "participant",
+ "y_axis": [
+  {
+   "color": "#42824c",
+   "y_field": "participant_score"
+  },
+  {
+   "color": "#822727",
+   "y_field": "task_progress"
+  }
+ ]
+}
