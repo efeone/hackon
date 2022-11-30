@@ -70,3 +70,15 @@ def change_event_status(doc):
     '''
     frappe.db.set_value(doc.doctype, doc.name, 'status', 'Closed')
     frappe.db.commit()
+
+@frappe.whitelist()
+def create_notification_log(subject, for_user, email_content, document_type, document_name):
+    notification_doc = frappe.new_doc('Notification Log')
+    notification_doc.subject = subject
+    notification_doc.type = 'Mention'
+    notification_doc.for_user = for_user
+    notification_doc.email_content = email_content
+    notification_doc.document_type = document_type
+    notification_doc.document_name = document_name
+    notification_doc.save()
+    frappe.db.commit()

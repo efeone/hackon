@@ -4,27 +4,34 @@
 import frappe
 from frappe.model.mapper import *
 from frappe.model.document import Document
+from hackon.hackon.utils import create_notification_log
 
 class Team(Document):
 	def validate(self):
 		self.check_team_lead()
 	def check_team_lead(self):
 		if frappe.db.exists('Participant',  {'team_lead':0 , 'team':self.name}):
-			participant_doc = frappe.db.get_last_doc('Participant', filters = {'team_lead':0, 'team':self.name})
+			participant_doc = frappe.get_last_doc('Participant', filters = {'team_lead':0, 'team':self.name})
 			frappe.db.set_value('Participant', participant_doc.name,'team_lead',1)
 
 
 @frappe.whitelist()
 def change_team_lead(new_team_lead, name):
+	username = False
+	email_content = "You're assigned as Team Lead"
+	subject = "Team Lead Changed"
+	if new_team_lead:
+		username = frappe.db.get_value('Participant', new_team_lead, 'user')
 	if frappe.db.exists('Team', name):
-		doc_name = frappe.get_doc('Team',name)
-		doc_name.team_lead = new_team_lead
-		doc_name.save()
-		if doc_name.team_lead:
-			frappe.db.set_value('Participant',doc_name.team_lead,'team_lead',0)
-			doc_name.team_lead = new_team_lead
-			frappe.db.set_value('Participant',new_team_lead,'team_lead',1)
-			doc_name.save()
+		doc = frappe.get_doc('Team', name)
+		email_content = email_content + ' for Team : '+ doc.team_name
+		if doc.team_lead:
+			frappe.db.set_value('Participant', doc.team_lead, 'team_lead', 0)
+			frappe.db.set_value('Participant', new_team_lead, 'team_lead', 1)
+		doc.team_lead = new_team_lead
+		doc.save()
+		if username:
+			create_notification_log(subject, username, email_content, doc.doctype, doc.name)
 		return True
 
 @frappe.whitelist()
