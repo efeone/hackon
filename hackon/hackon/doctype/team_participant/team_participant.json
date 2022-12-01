@@ -6,21 +6,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "participant",
-  "participant_name"
+  "participant"
  ],
  "fields": [
-  {
-   "fieldname": "participant_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Participant Name"
-  },
   {
    "fieldname": "participant",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Participant",
+   "label": "Participant Name",
    "options": "Participant",
    "reqd": 1
   }
@@ -28,7 +21,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-11-26 16:45:42.019626",
+ "modified": "2022-12-01 10:33:28.650083",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team Participant",

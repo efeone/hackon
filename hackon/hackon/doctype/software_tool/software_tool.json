@@ -6,7 +6,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "tool_name"
+  "tool_name",
+  "weightage"
  ],
  "fields": [
   {
@@ -16,13 +17,17 @@
    "in_standard_filter": 1,
    "label": "Tool Name",
    "reqd": 1,
-   "search_index": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "weightage",
+   "fieldtype": "Int",
+   "label": "Weightage"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-29 10:27:04.588940",
+ "modified": "2022-11-30 20:49:47.062029",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Software Tool",
