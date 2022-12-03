@@ -82,3 +82,8 @@ def create_notification_log(subject, for_user, email_content, document_type, doc
     notification_doc.document_name = document_name
     notification_doc.save()
     frappe.db.commit()
+
+@frappe.whitelist()
+def update_participant_score(doc, method = None):
+    if doc.total_weightage and doc.team_score and doc.participant:
+        frappe.db.set_value('Participant', doc.participant, 'participant_score', doc.total_weightage + doc.team_score)

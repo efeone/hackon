@@ -105,7 +105,8 @@ doc_events = {
 		'on_update':[
 			'hackon.hackon.utils.update_team_score_to_project',
 			'hackon.hackon.utils.update_team_score_to_team'
-			]
+			],
+		'before_save': 'hackon.hackon.utils.update_participant_score'
 	},
 }
 
