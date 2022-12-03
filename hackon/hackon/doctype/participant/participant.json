@@ -185,9 +185,7 @@
    "default": "0",
    "fieldname": "participant_score",
    "fieldtype": "Float",
-   "label": "Participant Score",
-   "permlevel": 1,
-   "precision": "1"
+   "label": "Participant Score"
   },
   {
    "fetch_from": "user.full_name",
@@ -205,7 +203,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-28 17:08:21.539364",
+ "modified": "2022-12-03 10:29:13.250537",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
