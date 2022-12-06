@@ -28,8 +28,10 @@ def get_data(filters):
 		FROM
 			`tabTeam` as t,
 			`tabProject` as p
+		WHERE
+			p.team = t.name
 		"""
-	doclist = frappe.db.sql(query, as_dict = 1)
+	doclist = frappe.db.sql(query.format(**{}), as_dict = 1)
 	if doclist:
 		for doc in doclist:
 			row = [

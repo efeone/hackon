@@ -87,3 +87,8 @@ def create_notification_log(subject, for_user, email_content, document_type, doc
 def update_participant_score(doc, method = None):
     if doc.total_weightage and doc.team_score and doc.participant:
         frappe.db.set_value('Participant', doc.participant, 'participant_score', doc.total_weightage + doc.team_score)
+
+@frappe.whitelist()
+def get_software_tool_weightage(software_tool):
+    doc = frappe.get_doc("Software Tool",software_tool)
+    return doc.weightage
