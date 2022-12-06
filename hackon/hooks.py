@@ -183,7 +183,9 @@ fixtures = [
 		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer']]]},
 		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer']]]},
 		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed","Draft","Pending review","Approved","Rejected"]]]},
-		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow","Event Request Workflow"]]]}
+		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow","Event Request Workflow"]]]},
+		{"dt": "Energy Point Rule", "filters": [["name", "in", ["On Task Completion"]]]}
+
 	]
 
 # Authentication and authorization
