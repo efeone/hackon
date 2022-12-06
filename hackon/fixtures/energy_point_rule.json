@@ -1,0 +1,23 @@
+[
+ {
+  "apply_only_once": 0,
+  "condition": "doc.status == \"Completed\"",
+  "docstatus": 0,
+  "doctype": "Energy Point Rule",
+  "enabled": 1,
+  "field_to_check": null,
+  "for_assigned_users": 0,
+  "for_doc_event": "Custom",
+  "max_points": 0,
+  "modified": "2022-12-03 10:53:33.789319",
+  "multiplier_field": null,
+  "name": "On Task Completion",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "points": 5,
+  "reference_doctype": "Task",
+  "rule_name": "On Task Completion",
+  "user_field": "completed_by"
+ }
+]
