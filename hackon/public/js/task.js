@@ -6,6 +6,16 @@ frappe.ui.form.on('Task', {
     frappe.db.get_single_value('Hackon Settings', 'maximum_participant_score').then( maximum_participant_score=>{
       frm.set_value('maximum_participant_score',maximum_participant_score);
     });
+    if (frm.doc.maximum_team_score){
+      frappe.db.get_single_value('Hackon Settings', 'maximum_team_score').then( maximum_team_score=>{
+        frm.set_value('team_score_out_of', maximum_team_score);
+       });
+      }
+      if (frm.doc.maximum_participant_score){
+        frappe.db.get_single_value('Hackon Settings', 'maximum_participant_score').then( maximum_participant_score=>{
+          frm.set_value('maximum_participant_score',maximum_participant_score);
+        });
+      }
   },
   software_tool:function(frm){
     manage_software_tool(frm)
@@ -16,6 +26,8 @@ frappe.ui.form.on('Task', {
     frm.set_value('total_weightage',total_weightage)
   }
 });
+
+
 frappe.ui.form.on('Software Tool Details',{
   weightage: function(frm, cdt, cdn){
     let d = locals[cdt][cdn];

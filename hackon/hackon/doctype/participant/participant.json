@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "P.####",
+ "autoname": "Prompt",
  "creation": "2022-11-18 10:08:50.765683",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -185,7 +185,8 @@
    "default": "0",
    "fieldname": "participant_score",
    "fieldtype": "Float",
-   "label": "Participant Score"
+   "label": "Participant Score",
+   "read_only": 1
   },
   {
    "fetch_from": "user.full_name",
@@ -203,7 +204,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-03 10:29:13.250537",
+ "modified": "2022-12-05 10:24:31.833192",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
