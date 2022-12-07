@@ -92,3 +92,10 @@ def update_participant_score(doc, method = None):
 def get_software_tool_weightage(software_tool):
     doc = frappe.get_doc("Software Tool",software_tool)
     return doc.weightage
+
+        team_doc = frappe.get_doc('Team', doc.team)
+        teamscore = 0
+        for participant_details in team_doc.participants:
+            if participant_details.participant == doc.participant:
+                participant_details.participant_score = doc.total_weightage + doc.team_score
+        team_doc.save()

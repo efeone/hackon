@@ -12,4 +12,5 @@ frappe.ui.form.on('Participant', {
     }
   })
  }
+
 });
