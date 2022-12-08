@@ -7,6 +7,7 @@ from frappe.model.document import Document
 
 class Team(Document):
 	def validate(self):
+		self.total_active_members = len(self.participants)
 		self.check_team_lead()
 		score = 0.0
 		for participant in self.participants:
