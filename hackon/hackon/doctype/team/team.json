@@ -1,18 +1,18 @@
 {
  "actions": [],
- "autoname": "TM.####",
+ "autoname": "field:team_name",
  "creation": "2022-11-21 12:30:28.091119",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "team_details_section",
+  "event",
   "team_name",
-  "team_score",
   "total_active_members",
   "column_break_4",
-  "event",
   "mentor",
+  "team_score",
   "team_lead",
   "amended_from",
   "participant_details_section",
@@ -24,7 +24,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Team Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_4",
@@ -94,7 +95,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-26 16:44:40.856799",
+ "modified": "2022-12-08 10:13:19.548282",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",

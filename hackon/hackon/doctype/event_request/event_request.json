@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "Prompt",
  "creation": "2022-11-28 12:16:09.245906",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -85,7 +85,7 @@
   },
   {
    "fieldname": "registration_starts_on",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Registration Starts On"
   },
   {
@@ -151,7 +151,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-11-28 14:54:05.792737",
+ "modified": "2022-12-07 17:12:50.708786",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
