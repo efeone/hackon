@@ -5,12 +5,18 @@ frappe.ui.form.on('Participant', {
 	refresh : function(frm){
 		frm.set_df_property('team_lead', 'read_only', frm.is_new() ? 0 : 1);
     frm.set_query('event', () => {
-    return {
-        filters: {
-            status : 'Open'
-        }
-    }
-  })
- }
-
+	    return {
+	        filters: {
+	            status : 'Open'
+	        }
+	    }
+  	});
+		frm.set_query('team', () => {
+			return {
+				filters: {
+					event : frm.doc.event
+				 }
+			 }
+	 });
+	}
 });
