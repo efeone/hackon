@@ -6,21 +6,21 @@ from frappe.model.mapper import *
 from frappe.model.document import Document
 
 class Team(Document):
+	def after_insert(self):
+		if frappe.session.user == self.owner:
+			if frappe.db.exists('Participant', {'user' : frappe.session.user}):
+				participant_doc = frappe.get_doc('Participant', {'user' : frappe.session.user})
+				participant_doc.team_lead = 1
+				participant_doc.save()
+
 	def validate(self):
 		self.total_active_members = len(self.participants)
-		self.check_team_lead()
 		score = 0.0
 		for participant in self.participants:
 			if participant.participant_score:
 				score += participant.participant_score
 		if score:
 			self.team_score = float(score)
-
-	def check_team_lead(self):
-		if frappe.db.exists('Participant',  {'team_lead':0 , 'team':self.name}):
-			participant_doc = frappe.get_last_doc('Participant', filters = {'team_lead':0, 'team':self.name})
-			frappe.db.set_value('Participant', participant_doc.name,'team_lead',1)
-
 
 @frappe.whitelist()
 def change_team_lead(new_team_lead, name):

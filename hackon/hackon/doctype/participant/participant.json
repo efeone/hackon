@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "Prompt",
+ "autoname": "naming_series:",
  "creation": "2022-11-18 10:08:50.765683",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "basic_info_section",
+  "naming_series",
   "user",
   "first_name",
   "middle_name",
@@ -164,8 +165,7 @@
    "fieldname": "team",
    "fieldtype": "Link",
    "label": "Team",
-   "options": "Team",
-   "reqd": 1
+   "options": "Team"
   },
   {
    "fieldname": "amended_from",
@@ -199,12 +199,21 @@
    "fieldname": "hobbies",
    "fieldtype": "Data",
    "label": "Hobbies"
+  },
+  {
+   "default": "P.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "P.#####",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-05 10:24:31.833192",
+ "modified": "2022-12-12 15:04:17.844970",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
@@ -223,6 +232,8 @@
    "write": 1
   }
  ],
+ "search_fields": "full_name",
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "title_field": "full_name"
 }
