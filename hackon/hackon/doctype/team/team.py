@@ -7,6 +7,7 @@ from frappe.model.document import Document
 
 class Team(Document):
 	def after_insert(self):
+		'''Team lead checkbox in participant enable only when a team is created'''
 		if frappe.session.user == self.owner:
 			if frappe.db.exists('Participant', {'user' : frappe.session.user}):
 				participant_doc = frappe.get_doc('Participant', {'user' : frappe.session.user})

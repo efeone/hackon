@@ -2,6 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Team', {
+	// validate : function(frm){
+	// 	if(frm.doc.total_active_members >frm.doc.maximum_allowed_team_members){
+	// 		frappe.throw({title:'ALERT !!', message: 'Team has the maximum number of members permitted !'})
+	// 		}
+	// },
 	refresh: function(frm) {
 		let roles = frappe.user_roles
 		if(roles.includes("Participant") && !frm.is_new()){
@@ -22,8 +27,13 @@ frappe.ui.form.on('Team', {
 				query : 'hackon.hackon.doctype.team.team.mentor_user_query',
 		}
   })
-	}
+	frappe.db.get_single_value('Hackon Settings', 'maximum_allowed_team_members').then( maximum_allowed_team_members=>{maximum_allowed_team_members
+		frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members );
+	})
+}
 });
+
+
 
 function new_team_lead(frm){
 	 let d = new frappe.ui.Dialog({

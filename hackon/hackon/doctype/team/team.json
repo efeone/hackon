@@ -13,6 +13,7 @@
   "column_break_4",
   "mentor",
   "team_score",
+  "maximum_allowed_team_members",
   "team_lead",
   "amended_from",
   "participant_details_section",
@@ -91,11 +92,17 @@
    "fieldtype": "Table",
    "label": "Participants",
    "options": "Team Participant"
+  },
+  {
+   "fieldname": "maximum_allowed_team_members",
+   "fieldtype": "Int",
+   "label": "Maximum Allowed Team Members",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-08 10:13:19.548282",
+ "modified": "2022-12-13 11:39:17.869823",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",

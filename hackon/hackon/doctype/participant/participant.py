@@ -4,6 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import *
+from frappe import _
 
 class Participant(Document):
 	def on_submit(self):
@@ -14,3 +15,13 @@ class Participant(Document):
 			"participant": self.name
 		})
 		team_members.save()
+
+
+@frappe.whitelist()
+def validate_team(team):
+	'''Method to disable the team from participant if team reached  maximum allowed team members'''
+	team_doc = frappe.get_doc('Team', team)
+	if team_doc.maximum_allowed_team_members == team_doc.total_active_members:
+		frappe.throw(title = _('ALERT !!'),
+		msg = _('Team has the maximum number of members permitted !')
+		)
