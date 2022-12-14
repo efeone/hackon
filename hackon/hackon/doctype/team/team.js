@@ -22,6 +22,10 @@ frappe.ui.form.on('Team', {
 				query : 'hackon.hackon.doctype.team.team.mentor_user_query',
 		}
   })
+	frappe.db.get_single_value('Hackon Settings','maximum_allowed_team_members').then(
+		maximum_allowed_team_members=>{maximum_allowed_team_members
+			frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members);
+		})
 	}
 });
 

@@ -17,5 +17,14 @@ frappe.ui.form.on('Participant', {
 				 }
 			 }
 	 });
-	}
+ },
+	team :function(frm){
+	     frappe.call({
+	         method: 'hackon.hackon.doctype.participant.participant.validate_team' ,
+	         args : {
+	                    'team' : frm.doc.team
+	         },
+	     })
+	 }
+
 });
