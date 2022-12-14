@@ -1,0 +1,38 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Website Sidebar",
+  "modified": "2022-12-14 14:57:43.421344",
+  "name": "Participant Portal",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "sidebar_items": [
+   {
+    "group": null,
+    "parent": "Participant Portal",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "events",
+    "title": "Events"
+   },
+   {
+    "group": null,
+    "parent": "Participant Portal",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "team-registration",
+    "title": "Team Registration"
+   },
+   {
+    "group": null,
+    "parent": "Participant Portal",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "participant-registration",
+    "title": "Participant Registration"
+   }
+  ],
+  "title": "Participant Portal"
+ }
+]
