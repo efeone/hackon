@@ -31,8 +31,7 @@
   "institution_name",
   "hobbies",
   "employment_status",
-  "education_history",
-  "amended_from"
+  "education_history"
  ],
  "fields": [
   {
@@ -42,61 +41,63 @@
   },
   {
    "fetch_from": "user.first_name",
+   "fetch_if_empty": 1,
    "fieldname": "first_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "First Name",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fetch_from": "user.middle_name",
+   "fetch_if_empty": 1,
    "fieldname": "middle_name",
    "fieldtype": "Data",
-   "label": "Middle Name",
-   "read_only": 1
+   "label": "Middle Name"
   },
   {
    "fetch_from": "user.last_name",
+   "fetch_if_empty": 1,
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "label": "Last Name",
-   "read_only": 1
+   "label": "Last Name"
   },
   {
    "fieldname": "column_break_5",
-   "fieldtype": "Column Break",
-   "read_only": 1
+   "fieldtype": "Column Break"
   },
   {
    "fetch_from": "user.email",
+   "fetch_if_empty": 1,
    "fieldname": "email",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email",
-   "read_only": 1
+   "options": "Email"
   },
   {
    "fetch_from": "user.mobile_no",
+   "fetch_if_empty": 1,
    "fieldname": "phone_no",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Phone No",
-   "options": "Phone",
-   "read_only": 1
+   "options": "Phone"
   },
   {
    "fetch_from": "user.gender",
+   "fetch_if_empty": 1,
    "fieldname": "gender",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Gender",
-   "read_only": 1
+   "options": "Gender"
   },
   {
    "fetch_from": "user.location",
+   "fetch_if_empty": 1,
    "fieldname": "location",
    "fieldtype": "Data",
-   "label": "Location",
-   "read_only": 1
+   "label": "Location"
   },
   {
    "fieldname": "educational_details_section",
@@ -107,15 +108,14 @@
    "fieldname": "user",
    "fieldtype": "Link",
    "label": "User",
-   "options": "User",
-   "reqd": 1
+   "options": "User"
   },
   {
    "fetch_from": "user.birth_date",
+   "fetch_if_empty": 1,
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date Of Birth",
-   "read_only": 1
+   "label": "Date Of Birth"
   },
   {
    "fieldname": "institution_name",
@@ -162,19 +162,11 @@
    "reqd": 1
   },
   {
+   "fetch_if_empty": 1,
    "fieldname": "team",
    "fieldtype": "Link",
    "label": "Team",
    "options": "Team"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Participant",
-   "print_hide": 1,
-   "read_only": 1
   },
   {
    "fieldname": "column_break_26",
@@ -190,6 +182,7 @@
   },
   {
    "fetch_from": "user.full_name",
+   "fetch_if_empty": 1,
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
@@ -211,9 +204,8 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2022-12-12 15:04:17.844970",
+ "modified": "2022-12-14 14:18:43.791179",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
