@@ -14,3 +14,12 @@ class Participant(Document):
 			"participant": self.name
 		})
 		team_members.save()
+
+@frappe.whitelist()
+def validate_team(team):
+    '''Method to validate the team from participant if team reached  maximum allowed team members'''
+    team_doc = frappe.get_doc('Team', team)
+    if team_doc.maximum_allowed_team_members == team_doc.total_active_members:
+        frappe.throw(title = ('ALERT !!'),
+        msg = ('Team has the maximum number of members permitted !')
+        )
