@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "Prompt",
+ "autoname": "naming_series:",
  "creation": "2022-11-28 12:16:09.245906",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -20,7 +20,6 @@
   "venue",
   "maximum_allowed_member_in_a_team",
   "no_of_participants_registered",
-  "project_template",
   "column_break_13",
   "registration_ends_on",
   "status",
@@ -96,12 +95,6 @@
    "options": "Online\nOffline"
   },
   {
-   "fieldname": "maximum_allowed_member_in_a_team",
-   "fieldtype": "Int",
-   "label": "Maximum Allowed Member in a Team",
-   "permlevel": 1
-  },
-  {
    "default": "0",
    "fieldname": "no_of_participants_registered",
    "fieldtype": "Int",
@@ -112,12 +105,6 @@
   {
    "fieldname": "column_break_13",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "project_template",
-   "fieldtype": "Link",
-   "label": "Project Template",
-   "options": "Project Template"
   },
   {
    "fieldname": "registration_ends_on",
@@ -134,7 +121,6 @@
    "options": "Open\nClosed"
   },
   {
-   "default": "0",
    "fieldname": "maximum_allowed_team",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team"
@@ -143,16 +129,23 @@
    "default": "ER-.",
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Series",
    "no_copy": 1,
    "options": "ER-.",
    "reqd": 1
+  },
+  {
+   "fieldname": "maximum_allowed_member_in_a_team",
+   "fieldtype": "Int",
+   "label": "Maximum Allowed Member in a Team ",
+   "permlevel": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-13 11:28:42.984368",
+ "modified": "2022-12-14 15:37:19.749434",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
