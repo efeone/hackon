@@ -18,7 +18,7 @@
  "is_standard": 1,
  "label": "Hackon",
  "links": [],
- "modified": "2022-11-28 10:26:37.818876",
+ "modified": "2022-12-13 12:40:26.576527",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Hackon",
@@ -42,6 +42,18 @@
    "doc_view": "List",
    "label": "Participant",
    "link_to": "Participant",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Event Request",
+   "link_to": "Event Request",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Hackon Settings",
+   "link_to": "Hackon Settings",
    "type": "DocType"
   }
  ]
