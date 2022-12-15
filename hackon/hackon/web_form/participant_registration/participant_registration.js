@@ -61,4 +61,19 @@ frappe.ready(function() {
       });
     }
   }
+  frappe.web_form.validate = () => {
+    let email_id = frappe.web_form.get_value("email");
+    var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+    if(!email_id.match(pattern)){
+      frappe.msgprint('Enter a Valid Email Address');
+      return false;
+    }
+    let mobile_no = frappe.web_form.get_value("phone_no");
+    var mob_no = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+    if (!mobile_no.match(mob_no)){
+      frappe.msgprint('Enter a Valid Mobile Number');
+      return false;
+    }
+    return true;
+  }
 })
