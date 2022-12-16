@@ -22,7 +22,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2022-12-14 16:08:37.001530",
+ "modified": "2022-12-15 12:37:26.867176",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "participant-registration",
@@ -44,10 +44,10 @@
   },
   {
    "enabled": 1,
-   "reference_doctype": "Team",
-   "role": "Participant",
-   "route": "team-registration",
-   "title": "Team Registration"
+   "reference_doctype": "Event Request",
+   "role": "Event Requester",
+   "route": "event-requests",
+   "title": "Event Requests"
   },
   {
    "enabled": 1,

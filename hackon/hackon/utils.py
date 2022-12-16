@@ -93,7 +93,31 @@ def update_participant_score(doc, method = None):
             if participant_details.participant == doc.participant:
                 participant_details.participant_score = doc.total_weightage + doc.team_score
         team_doc.save()
+
 @frappe.whitelist()
 def get_software_tool_weightage(software_tool):
     doc = frappe.get_doc("Software Tool",software_tool)
     return doc.weightage
+
+
+def get_permission_query_conditions_for_participant(user):
+    if not user:
+        user = frappe.session.user
+
+    user_roles = frappe.get_roles(user)
+    if user == "Administrator" or "Host Organizer" in user_roles:
+        return None
+    else:
+        conditions = '(`tabParticipant`.`_assign` like "%{user}%") OR(`tabParticipant`.`owner` = "{user}")'.format(user = user)
+        return conditions
+
+def get_permission_query_conditions_for_event_request(user):
+    if not user:
+        user = frappe.session.user
+
+    user_roles = frappe.get_roles(user)
+    if user == "Administrator":
+        return None
+    else:
+        conditions = '(`tabEvent Request`.`_assign` like "%{user}%") OR(`tabEvent Request`.`owner` = "{user}")'.format(user = user)
+        return conditions
