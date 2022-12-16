@@ -2,7 +2,7 @@
  {
   "docstatus": 0,
   "doctype": "Website Sidebar",
-  "modified": "2022-12-14 14:57:43.421344",
+  "modified": "2022-12-15 12:38:18.943836",
   "name": "Participant Portal",
   "parent": null,
   "parentfield": null,
@@ -13,7 +13,7 @@
     "parent": "Participant Portal",
     "parentfield": "sidebar_items",
     "parenttype": "Website Sidebar",
-    "route": "events",
+    "route": "/events",
     "title": "Events"
    },
    {
@@ -21,15 +21,15 @@
     "parent": "Participant Portal",
     "parentfield": "sidebar_items",
     "parenttype": "Website Sidebar",
-    "route": "team-registration",
-    "title": "Team Registration"
+    "route": "/event-requests",
+    "title": "Event Requests"
    },
    {
     "group": null,
     "parent": "Participant Portal",
     "parentfield": "sidebar_items",
     "parenttype": "Website Sidebar",
-    "route": "participant-registration",
+    "route": "/participant-registration",
     "title": "Participant Registration"
    }
   ],

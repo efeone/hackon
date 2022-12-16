@@ -459,10 +459,10 @@
   "write": 0
  },
  {
-  "amend": 0,
+  "amend": 1,
   "cancel": 1,
-  "create": 0,
-  "delete": 0,
+  "create": 1,
+  "delete": 1,
   "docstatus": 0,
   "doctype": "Custom DocPerm",
   "email": 1,
@@ -480,10 +480,10 @@
   "report": 1,
   "role": "Super Admin",
   "select": 1,
-  "set_user_permissions": 0,
+  "set_user_permissions": 1,
   "share": 1,
   "submit": 1,
-  "write": 0
+  "write": 1
  },
  {
   "amend": 1,
@@ -494,7 +494,7 @@
   "doctype": "Custom DocPerm",
   "email": 1,
   "export": 1,
-  "if_owner": 0,
+  "if_owner": 1,
   "import": 1,
   "modified": "2022-11-29 15:48:30.423572",
   "name": "2b29ec1022",

@@ -5,6 +5,22 @@ frappe.ready(function() {
     get_user_details();
     filter_events();
   }
+  
+  frappe.web_form.validate = () => {
+    let email_id = frappe.web_form.get_value("email");
+    var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+    if(!email_id.match(pattern)){
+      frappe.msgprint('Enter a Valid Email Address');
+      return false;
+    }
+    let mobile_no = frappe.web_form.get_value("phone_no");
+    var mob_no = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+    if (!mobile_no.match(mob_no)){
+      frappe.msgprint('Enter a Valid Mobile Number');
+      return false;
+    }
+    return true;
+  }
 
   function filter_users() {
     var options = [];
@@ -18,7 +34,7 @@ frappe.ready(function() {
   }
 
   function filter_events() {
-    var api_url = 'api/resource/Event?filters=[["Event","status","=","Open"]]';
+    var api_url = 'api/resource/Event?filters=[["status","=","Open"],["published","=",1]]';
     $.ajax({
     	type: 'GET',
     	url: api_url,
@@ -61,19 +77,4 @@ frappe.ready(function() {
       });
     }
   }
-  frappe.web_form.validate = () => {
-    let email_id = frappe.web_form.get_value("email");
-    var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-    if(!email_id.match(pattern)){
-      frappe.msgprint('Enter a Valid Email Address');
-      return false;
-    }
-    let mobile_no = frappe.web_form.get_value("phone_no");
-    var mob_no = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
-    if (!mobile_no.match(mob_no)){
-      frappe.msgprint('Enter a Valid Mobile Number');
-      return false;
-    }
-    return true;
-  }
-})
+});
