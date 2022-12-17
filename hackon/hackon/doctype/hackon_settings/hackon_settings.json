@@ -16,14 +16,17 @@
  "fields": [
   {
    "fieldname": "section_break_1",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Defaults"
   },
   {
+   "default": "50",
    "fieldname": "maximum_team_score",
    "fieldtype": "Int",
    "label": "Maximum Team Score"
   },
   {
+   "default": "10",
    "fieldname": "maximum_participant_score",
    "fieldtype": "Int",
    "label": "Maximum Participant Score"
@@ -33,11 +36,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "5",
    "fieldname": "maximum_allowed_team_members",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team Members"
   },
   {
+   "default": "20",
    "fieldname": "maximum_allowed_team",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team"
@@ -46,7 +51,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-11-28 14:45:02.449114",
+ "modified": "2022-12-17 08:44:14.469598",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Hackon Settings",
