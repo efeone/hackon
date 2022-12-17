@@ -3,7 +3,8 @@
 
 frappe.ui.form.on('Team', {
 	refresh: function(frm) {
-		let roles = frappe.user_roles
+		set_filters(frm);
+		let roles = frappe.user_roles;
 		if(roles.includes("Participant") && !frm.is_new()){
 			frm.add_custom_button ("Change Team Lead", () => {
 				new_team_lead(frm);
@@ -17,15 +18,11 @@ frappe.ui.form.on('Team', {
 				});
 			});
 		}
-		frm.set_query('mentor', function() {
-		return {
-				query : 'hackon.hackon.doctype.team.team.mentor_user_query',
+		else{
+			frappe.db.get_single_value('Hackon Settings','maximum_allowed_team_members').then(maximum_allowed_team_members =>{ maximum_allowed_team_members
+					frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members);
+			});
 		}
-  })
-	frappe.db.get_single_value('Hackon Settings','maximum_allowed_team_members').then(
-		maximum_allowed_team_members=>{maximum_allowed_team_members
-			frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members);
-		})
 	}
 });
 
@@ -37,7 +34,14 @@ function new_team_lead(frm){
 	            label: 'New Team Lead',
 	            fieldname: 'new_team_lead',
 	            fieldtype: 'Link',
-							options: 'Participant'
+							options: 'Participant',
+							"get_query": function () {
+								return {
+									filters: {
+										team: frm.doc.name,
+									}
+								};
+							}
 	        }
 	    ],
 			primary_action_label: 'Save',
@@ -60,4 +64,17 @@ function new_team_lead(frm){
 		   }
 	  });
 	  d.show();
+}
+
+function set_filters(frm){
+	frm.set_query("participant", "participants", function(doc) {
+		return {
+			filters: { 'team': doc.name }
+		};
+	});
+	frm.set_query('mentor', function() {
+		return {
+				query : 'hackon.hackon.doctype.team.team.mentor_user_query',
+		}
+	});
 }
