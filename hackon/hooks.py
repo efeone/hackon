@@ -196,6 +196,17 @@ fixtures = [
 
 	]
 
+standard_portal_menu_items = [
+	{"title": "Participant Registration", "route": "/participant-registration", "reference_doctype": "Participant", "role": "Participant"},
+]
+
+website_route_rules = [
+	{"from_route": "/login", "to_route": "/sign-up"},
+]
+
+required_apps = ['frappe', 'erpnext']
+
+
 # Authentication and authorization
 # --------------------------------
 
