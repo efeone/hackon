@@ -191,7 +191,7 @@ fixtures = [
 		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed","Draft","Pending review","Approved","Rejected"]]]},
 		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow","Event Request Workflow"]]]},
 		{"dt": "Energy Point Rule", "filters": [["name", "in", ["On Task Completion"]]]},
-		{"dt": "Web Page", "filters": [["name", "in", ["events", "event-view", "event-requests"]]]},
+		{"dt": "Web Page", "filters": [["name", "in", ["events", "event-view", "event-requests", "sign-up"]]]},
 		{"dt": "Website Sidebar", "filters": [["name", "in", ["Participant Portal"]]]}
 
 	]
