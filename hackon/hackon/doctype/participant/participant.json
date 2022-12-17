@@ -25,6 +25,7 @@
   "team_lead",
   "column_break_26",
   "team",
+  "new_team",
   "participant_score",
   "section_break_20",
   "area_of_interest",
@@ -162,7 +163,6 @@
    "reqd": 1
   },
   {
-   "fetch_if_empty": 1,
    "fieldname": "team",
    "fieldtype": "Link",
    "label": "Team",
@@ -201,11 +201,17 @@
    "label": "Series",
    "options": "P.#####",
    "reqd": 1
+  },
+  {
+   "fieldname": "new_team",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "New Team"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-14 15:52:20.366639",
+ "modified": "2022-12-17 09:04:11.128687",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
