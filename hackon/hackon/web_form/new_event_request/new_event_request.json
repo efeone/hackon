@@ -20,7 +20,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2022-12-15 14:07:29.979678",
+ "modified": "2022-12-17 16:17:19.482405",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "new-event-request",
@@ -113,7 +113,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "start_on",
+   "fieldname": "starts_on",
    "fieldtype": "Datetime",
    "hidden": 0,
    "label": "Starts on",
@@ -125,7 +125,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "end_on",
+   "fieldname": "ends_on",
    "fieldtype": "Datetime",
    "hidden": 0,
    "label": "Ends on",

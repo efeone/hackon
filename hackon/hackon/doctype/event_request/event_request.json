@@ -12,8 +12,8 @@
   "subject",
   "published",
   "column_break_5",
-  "start_on",
-  "end_on",
+  "starts_on",
+  "ends_on",
   "registration_details_section",
   "registration_starts_on",
   "mode",
@@ -66,17 +66,6 @@
   {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "start_on",
-   "fieldtype": "Datetime",
-   "label": "Starts on",
-   "reqd": 1
-  },
-  {
-   "fieldname": "end_on",
-   "fieldtype": "Datetime",
-   "label": "Ends on"
   },
   {
    "fieldname": "registration_details_section",
@@ -140,12 +129,23 @@
    "fieldtype": "Int",
    "label": "Maximum Allowed Member in a Team ",
    "permlevel": 1
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Datetime",
+   "label": "Starts on",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Datetime",
+   "label": "Ends on"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-14 15:37:19.749434",
+ "modified": "2022-12-17 15:57:33.787525",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
