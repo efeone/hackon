@@ -121,3 +121,10 @@ def get_permission_query_conditions_for_event_request(user):
     else:
         conditions = '(`tabEvent Request`.`_assign` like "%{user}%") OR(`tabEvent Request`.`owner` = "{user}")'.format(user = user)
         return conditions
+
+def change_user_role(user, role_profile):
+    ''' Method to change Role of an User'''
+    if frappe.db.exists('User', user):
+        user_doc = frappe.get_doc('User', user)
+        user_doc.role_profile_name = role_profile
+        user_doc.save()
