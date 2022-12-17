@@ -12,6 +12,8 @@ class Team(Document):
 				participant_doc = frappe.get_doc('Participant', {'user' : frappe.session.user})
 				participant_doc.team_lead = 1
 				participant_doc.save()
+				frappe.db.set_value('Team', self.name, 'team_lead', participant_doc.name)
+				frappe.db.commit()
 
 	def validate(self):
 		self.total_active_members = len(self.participants)
@@ -21,6 +23,10 @@ class Team(Document):
 				score += participant.participant_score
 		if score:
 			self.team_score = float(score)
+
+	def on_update(self):
+		if not self.team_lead:
+			set_team_lead_if_not_set(self.name)
 
 @frappe.whitelist()
 def change_team_lead(new_team_lead, name):
@@ -62,3 +68,13 @@ def mentor_user_query(doctype, txt, searchfield, start, page_len, filters):
             u.enabled = 1 and
             u.name like %s
     """, ("%" + txt + "%"))
+
+def set_team_lead_if_not_set(team):
+	''' Method to set Team Lead in Team if not set'''
+	owner = frappe.db.get_value('Team', team, 'owner')
+	if frappe.db.exists('Participant', { 'user' : owner }):
+		participant_doc = frappe.get_doc('Participant', { 'user' : owner })
+		participant_doc.team_lead = 1
+		participant_doc.save()
+		frappe.db.set_value('Team', team, 'team_lead', participant_doc.name)
+		frappe.db.commit()
