@@ -44,7 +44,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Mentor",
-   "options": "User"
+   "options": "User",
+   "permlevel": 1
   },
   {
    "default": "0",
@@ -94,6 +95,7 @@
    "options": "Team Participant"
   },
   {
+   "default": "0",
    "fieldname": "maximum_allowed_team_members",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team Members"
@@ -101,7 +103,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-13 17:37:11.350262",
+ "modified": "2022-12-17 08:51:11.056252",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
@@ -121,6 +123,9 @@
    "write": 1
   }
  ],
+ "search_fields": "team_name, event",
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "title_field": "team_name",
+ "track_changes": 1
 }
