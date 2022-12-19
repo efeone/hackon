@@ -92,7 +92,8 @@
    "fieldname": "participants",
    "fieldtype": "Table",
    "label": "Participants",
-   "options": "Team Participant"
+   "options": "Team Participant",
+   "read_only": 1
   },
   {
    "default": "0",
@@ -103,7 +104,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-17 08:51:11.056252",
+ "modified": "2022-12-19 11:28:38.216486",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
