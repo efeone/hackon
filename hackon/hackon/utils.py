@@ -1,5 +1,6 @@
 import frappe
 from frappe.utils import *
+from frappe import _
 
 @frappe.whitelist()
 def project_template(doc, method = None):
@@ -107,7 +108,13 @@ def get_software_tool_weightage_from_task(software_tool, task):
         if software_tool == tool.software_tool:
             weightage = tool.weightage
     return weightage
-
+# validate of Task score #
+@frappe.whitelist()
+def validation_of_task_score(doc, method = None):
+    if doc.team_score > doc.maximum_participant_score:
+        frappe.throw(title = _('ALERT !!'),
+        msg = _('Task Score Greater than Maximum Participant Score !')
+        )
 def get_permission_query_conditions_for_participant(user):
     if not user:
         user = frappe.session.user
