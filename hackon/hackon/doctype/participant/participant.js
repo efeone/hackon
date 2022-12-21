@@ -17,7 +17,13 @@ frappe.ui.form.on('Participant', {
 				 }
 			 }
 	 });
+	 if(frm.is_new() || !frm.doc.maximum_participant_score){
+		 frappe.db.get_single_value('Hackon Settings', 'maximum_participant_score').then( maximum_participant_score=>{
+			 frm.set_value('maximum_participant_score', maximum_participant_score);
+		 });
+	 }
  },
+
 	team :function(frm){
 	     frappe.call({
 	         method: 'hackon.hackon.doctype.participant.participant.validate_team' ,
@@ -25,6 +31,5 @@ frappe.ui.form.on('Participant', {
 	                    'team' : frm.doc.team
 	         },
 	     })
-	 }
-
+	 },
 });

@@ -107,6 +107,7 @@ has_website_permission = {
 
 doc_events = {
 	"Task":{
+		'validate':'hackon.hackon.utils.validation_of_task_score',
 		'after_insert': 'hackon.hackon.utils.project_template',
 		'on_update':[
 			'hackon.hackon.utils.update_team_score_to_project',

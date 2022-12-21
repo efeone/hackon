@@ -26,6 +26,8 @@
   "column_break_26",
   "team",
   "new_team",
+  "column_break_20",
+  "maximum_participant_score",
   "participant_score",
   "section_break_20",
   "area_of_interest",
@@ -207,11 +209,21 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "New Team"
+  },
+  {
+   "fieldname": "maximum_participant_score",
+   "fieldtype": "Int",
+   "label": "Maximum Participant Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-17 09:04:11.128687",
+ "modified": "2022-12-21 11:43:30.692066",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Participant",
