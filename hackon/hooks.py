@@ -115,6 +115,9 @@ doc_events = {
 			],
 		'before_save': 'hackon.hackon.utils.update_participant_score'
 	},
+	"Event":{
+       'validate': 'hackon.hackon.utils.validation_of_starting_date'
+   }
 }
 
 # Scheduled Tasks

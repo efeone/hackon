@@ -143,3 +143,9 @@ def change_user_role(user, role_profile):
         user_doc = frappe.get_doc('User', user)
         user_doc.role_profile_name = role_profile
         user_doc.save()
+@frappe.whitelist()
+def validation_of_starting_date(doc, method = None):
+    if doc.registration_ends_on >= doc.starts_on :
+        frappe.throw(title = _('ALERT !!'),
+        msg = _('Set Valid Start Date !')
+        )
