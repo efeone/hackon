@@ -34,7 +34,7 @@ app_license = "MIT"
 doctype_js = {
 	"Project" : "public/js/project.js",
 	"Task" : "public/js/task.js",
-	"Project Template" : "public/js/project_template.js"
+	"Project Template" : "public/js/project_template.js",
 	}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -114,6 +114,9 @@ doc_events = {
 			],
 		'before_save': 'hackon.hackon.utils.update_participant_score'
 	},
+   "Event":{
+       'validate': 'hackon.hackon.utils.validation_of_starting_date'
+   }
 }
 
 # Scheduled Tasks

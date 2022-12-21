@@ -1,5 +1,6 @@
 import frappe
 from frappe.utils import *
+from frappe import _
 
 @frappe.whitelist()
 def project_template(doc, method = None):
@@ -136,3 +137,10 @@ def change_user_role(user, role_profile):
         user_doc = frappe.get_doc('User', user)
         user_doc.role_profile_name = role_profile
         user_doc.save()
+
+@frappe.whitelist()
+def validation_of_starting_date(doc, method = None):
+    if doc.registration_ends_on >= doc.starts_on :
+        frappe.throw(title = _('ALERT !!'),
+        msg = _('Cannot select Past date in field Starts on !')
+        )
