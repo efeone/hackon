@@ -10,6 +10,7 @@ from frappe import _
 class EventRequest(Document):
 	def validate(self):
 		self.validation_of_registration_date()
+		self.validation_of_registration_end_date()
 	def on_update_after_submit(self):
 		if self.workflow_state == 'Approved':
 			create_event(self.name)
@@ -21,6 +22,11 @@ class EventRequest(Document):
 		if self.registration_ends_on > self.starts_on :
 			frappe.throw(title = _('ALERT !!'),
 				msg = _('The deadline for registration should come before the event itself..!')
+			)
+	def validation_of_registration_end_date(self):
+		if self.registration_ends_on < self.registration_starts_on :
+			frappe.throw(title = _('ALERT !!'),
+				msg = _('Set a valid end date...!')
 			)
 
 
