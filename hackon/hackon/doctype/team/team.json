@@ -10,6 +10,7 @@
   "event",
   "team_name",
   "total_active_members",
+  "maximum_team_score",
   "column_break_4",
   "mentor",
   "team_score",
@@ -100,11 +101,17 @@
    "fieldname": "maximum_allowed_team_members",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team Members"
+  },
+  {
+   "fieldname": "maximum_team_score",
+   "fieldtype": "Int",
+   "label": "Maximum Team Score",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-19 11:28:38.216486",
+ "modified": "2022-12-21 16:43:16.216708",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",

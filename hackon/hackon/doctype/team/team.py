@@ -4,8 +4,10 @@
 import frappe
 from frappe.model.mapper import *
 from frappe.model.document import Document
+from frappe import _
 
 class Team(Document):
+
 	def after_insert(self):
 		if frappe.session.user == self.owner:
 			if frappe.db.exists('Participant', {'user' : frappe.session.user}):
@@ -16,13 +18,21 @@ class Team(Document):
 				frappe.db.commit()
 
 	def validate(self):
+		self.validation_of_team_score()
 		self.total_active_members = len(self.participants)
-		score = 0.0
+		score = 0
 		for participant in self.participants:
 			if participant.participant_score:
 				score += participant.participant_score
 		if score:
 			self.team_score = float(score)
+
+	def validation_of_team_score(self):
+		if self.team_score > self.maximum_team_score:
+					frappe.throw(title = _('ALERT !!'),
+						msg = _('Team Score Greater than Maximum Team Score..!')
+					)
+
 
 	def on_update(self):
 		if not self.team_lead:

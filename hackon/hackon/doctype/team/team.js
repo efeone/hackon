@@ -3,6 +3,13 @@
 
 frappe.ui.form.on('Team', {
 	refresh: function(frm) {
+		if(frm.is_new()){
+      frappe.db.get_single_value('Hackon Settings', 'maximum_team_score').then( maximum_team_score=>{
+        frm.set_value('maximum_team_score', maximum_team_score);
+      });
+      frappe.db.get_single_value('Hackon Settings', 'maximum_allowed_team_members').then( maximum_allowed_team_members=>{
+        frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members);
+      });
 		set_filters(frm);
 		let roles = frappe.user_roles;
 		if(roles.includes("Participant") && !frm.is_new()){
@@ -18,11 +25,8 @@ frappe.ui.form.on('Team', {
 				});
 			});
 		}
-		else{
-			frappe.db.get_single_value('Hackon Settings','maximum_allowed_team_members').then(maximum_allowed_team_members =>{ maximum_allowed_team_members
-					frm.set_value('maximum_allowed_team_members',maximum_allowed_team_members);
-			});
 		}
+
 	}
 });
 
