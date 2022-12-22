@@ -26,7 +26,7 @@ class EventRequest(Document):
 	def validation_of_registration_end_date(self):
 		if self.registration_ends_on < self.registration_starts_on :
 			frappe.throw(title = _('ALERT !!'),
-				msg = _('Set a valid end date...!')
+				msg = _('Set a valid registration date...!')
 			)
 
 
