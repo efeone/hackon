@@ -88,3 +88,16 @@ def set_team_lead_if_not_set(team):
 		participant_doc.save()
 		frappe.db.set_value('Team', team, 'team_lead', participant_doc.name)
 		frappe.db.commit()
+
+def get_permission_query_conditions_for_team(user):
+	if not user:
+		user = frappe.session.user
+	user_roles = frappe.get_roles(user)
+	if user == "Administrator" or "Host Organizer" in user_roles:
+		return None
+	elif "Mentor" in user_roles:
+		conditions = '(`tabTeam`.`_assign` like "%{user}%") OR(`tabTeam`.`mentor` = "{user}")'.format(user = user)
+		return conditions
+	else:
+		conditions = '(`tabTeam`.`_assign` like "%{user}%") OR(`tabTeam`.`owner` = "{user}")'.format(user = user)
+		return conditions

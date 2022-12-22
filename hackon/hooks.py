@@ -82,6 +82,7 @@ doctype_js = {
 permission_query_conditions = {
 	"Participant": "hackon.hackon.utils.get_permission_query_conditions_for_participant",
 	"Event Request": "hackon.hackon.utils.get_permission_query_conditions_for_event_request",
+	"Team": "hackon.hackon.doctype.team.team.get_permission_query_conditions_for_team"
 }
 #
 # has_permission = {
