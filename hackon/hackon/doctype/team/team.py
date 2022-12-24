@@ -29,9 +29,9 @@ class Team(Document):
 
 	def validation_of_team_score(self):
 		if self.team_score > self.maximum_team_score:
-					frappe.throw(title = _('ALERT !!'),
-						msg = _('Team Score Greater than Maximum Team Score..!')
-					)
+			frappe.throw(title = _('ALERT !!'),
+				msg = _('Team Score Greater than Maximum Team Score..!')
+			)
 
 
 	def on_update(self):
