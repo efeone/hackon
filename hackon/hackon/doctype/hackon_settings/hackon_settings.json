@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "creation": "2022-11-28 14:45:02.449114",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -51,7 +50,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-17 08:44:14.469598",
+ "modified": "2022-12-24 14:26:22.762565",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Hackon Settings",
@@ -66,6 +65,44 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Super Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Host Organizer",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Participant",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Mentor",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Judge",
+   "share": 1
   }
  ],
  "sort_field": "modified",

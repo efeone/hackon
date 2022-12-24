@@ -195,7 +195,7 @@ user_data_fields = [
 
 fixtures = [
 		{"dt": "Role","filters": [["name", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer', 'Event Requester']]]},
-		{"dt": "Custom DocPerm","filters": [["role", "in", ['Participant', 'Super Admin', 'Judge','Team Lead', 'Mentor', 'Host Organizer', 'Event Requester']]]},
+		{"dt": "Custom DocPerm","filters": [["parent", "in", ['Task', 'Project', 'Event', 'Project Template']]]},
 		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed","Draft","Pending review","Approved","Rejected"]]]},
 		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow","Event Request Workflow"]]]},
 		{"dt": "Energy Point Rule", "filters": [["name", "in", ["On Task Completion"]]]},

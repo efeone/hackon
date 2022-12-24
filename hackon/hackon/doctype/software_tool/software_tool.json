@@ -30,7 +30,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-17 18:18:16.644246",
+ "modified": "2022-12-24 14:31:39.281480",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Software Tool",
@@ -78,6 +78,7 @@
    "read": 1,
    "report": 1,
    "role": "All",
+   "select": 1,
    "share": 1
   }
  ],
