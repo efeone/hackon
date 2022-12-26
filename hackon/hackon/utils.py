@@ -108,11 +108,11 @@ def get_software_tool_weightage_from_task(software_tool, task):
         if software_tool == tool.software_tool:
             weightage = tool.weightage
     return weightage
-    
+
 # validate of Task score #
 @frappe.whitelist()
 def validate_task_score(doc, method = None):
-    if doc.team_score > doc.maximum_participant_score:
+    if str(doc.team_score) > str(doc.maximum_participant_score):
         frappe.throw(title = _('ALERT !!'),
         msg = _('Task Score Greater than Maximum Participant Score !')
         )
@@ -156,7 +156,7 @@ def validation_of_starting_date(doc, method = None):
             )
 @frappe.whitelist()
 def validation_of_Registration_date(doc, method = None):
-    if doc.registration_starts_on >= doc.registration_ends_on:
+    if str(doc.registration_starts_on) >= str(doc.registration_ends_on):
         frappe.throw(
             title = _('ALERT !!'),
             msg = _('The Registration end date should be greater than the Registration start date...!!')

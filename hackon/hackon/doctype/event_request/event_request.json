@@ -72,7 +72,7 @@
   },
   {
    "fieldname": "registration_starts_on",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Registration Starts On",
    "reqd": 1
   },
@@ -96,7 +96,7 @@
   },
   {
    "fieldname": "registration_ends_on",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Registration Ends On"
   },
   {
@@ -135,7 +135,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-24 14:24:21.853473",
+ "modified": "2022-12-26 11:04:43.640044",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
