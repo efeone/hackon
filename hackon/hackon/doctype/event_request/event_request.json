@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2022-11-28 12:16:09.245906",
  "doctype": "DocType",
@@ -22,7 +21,6 @@
   "no_of_participants_registered",
   "column_break_13",
   "registration_ends_on",
-  "status",
   "maximum_allowed_team",
   "amended_from"
  ],
@@ -102,15 +100,6 @@
    "label": "Registration Ends On"
   },
   {
-   "default": "Open",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Status",
-   "options": "Open\nClosed"
-  },
-  {
    "fieldname": "maximum_allowed_team",
    "fieldtype": "Int",
    "label": "Maximum Allowed Team"
@@ -146,7 +135,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-21 10:45:09.980840",
+ "modified": "2022-12-24 14:24:21.853473",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
@@ -162,7 +151,43 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Requester",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Host Organizer",
+   "share": 1
   }
  ],
  "quick_entry": 1,
