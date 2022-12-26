@@ -112,7 +112,7 @@ def get_software_tool_weightage_from_task(software_tool, task):
 # validate of Task score #
 @frappe.whitelist()
 def validate_task_score(doc, method = None):
-    if str(doc.team_score) > str(doc.maximum_participant_score):
+    if doc.team_score and doc.maximum_participant_score and float(doc.team_score) > float(doc.maximum_participant_score):
         frappe.throw(title = _('ALERT !!'),
         msg = _('Task Score Greater than Maximum Participant Score !')
         )
@@ -149,14 +149,14 @@ def change_user_role(user, role_profile):
 @frappe.whitelist()
 def validation_of_starting_date(doc, method = None):
     if getdate(doc.starts_on):
-        if getdate(doc.registration_ends_on) >= getdate(doc.starts_on) :
+        if getdate(doc.registration_ends_on) > getdate(doc.starts_on) :
             frappe.throw(
                 title = _('ALERT !!'),
                 msg = _('The Starts on date should be greater than the Registration end date....!!')
             )
 @frappe.whitelist()
 def validation_of_Registration_date(doc, method = None):
-    if str(doc.registration_starts_on) >= str(doc.registration_ends_on):
+    if str(doc.registration_starts_on) > str(doc.registration_ends_on):
         frappe.throw(
             title = _('ALERT !!'),
             msg = _('The Registration end date should be greater than the Registration start date...!!')
