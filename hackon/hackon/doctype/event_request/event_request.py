@@ -24,7 +24,7 @@ class EventRequest(Document):
 				msg = _('The deadline for registration should come before the event itself..!')
 			)
 	def validation_of_registration_end_date(self):
-		if self.registration_ends_on <= self.registration_starts_on :
+		if self.registration_ends_on < self.registration_starts_on :
 			frappe.throw(
 			   title = _('ALERT !!'),
 			msg = _('The registration end date should be greater than the registration start date....!')
