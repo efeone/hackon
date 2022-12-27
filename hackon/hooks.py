@@ -112,7 +112,8 @@ doc_events = {
 		'after_insert': 'hackon.hackon.utils.project_template',
 		'on_update':[
 			'hackon.hackon.utils.update_team_score_to_project',
-			'hackon.hackon.utils.update_team_score_to_team'
+			'hackon.hackon.utils.update_team_score_to_team',
+			'hackon.hackon.utils.set_user_permission'
 			],
 		'before_save': 'hackon.hackon.utils.update_participant_score'
 	},

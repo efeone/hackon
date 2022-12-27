@@ -161,3 +161,14 @@ def validation_of_Registration_date(doc, method = None):
             title = _('ALERT !!'),
             msg = _('The Registration end date should be greater than the Registration start date...!!')
         )
+
+@frappe.whitelist()
+def set_user_permission(doc, method):
+    """ Create new doc user permission for listing tasks based on project"""
+    email = frappe.db.get_value('Participant', doc.participant, 'email')
+    if not frappe.db.exists('User Permission', {'user':email, 'allow':'project', 'for_value':doc.project}):
+        user_permission = frappe.new_doc('User Permission')
+        user_permission.user = email
+        user_permission.allow = 'project'
+        user_permission.for_value = doc.project
+        user_permission.save()
