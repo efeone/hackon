@@ -108,19 +108,12 @@ has_website_permission = {
 
 doc_events = {
 	"Task":{
-		'validate':'hackon.hackon.utils.validate_task_score',
-		'after_insert': 'hackon.hackon.utils.project_template',
-		'on_update':[
-			'hackon.hackon.utils.update_team_score_to_project',
-			'hackon.hackon.utils.update_team_score_to_team'
-			],
-		'before_save': 'hackon.hackon.utils.update_participant_score'
+		'validate':'hackon.hackon.doc_events.validate_task',
+		'after_insert': 'hackon.hackon.doc_events.task_after_insert',
+		'before_save': 'hackon.hackon.doc_events.task_before_save'
 	},
 	"Event":{
-       'validate': [
-	       'hackon.hackon.utils.validation_of_starting_date',
-		   'hackon.hackon.utils.validation_of_Registration_date'
-	   ]
+       'validate': 'hackon.hackon.doc_events.validate_event'
    }
 }
 
@@ -132,7 +125,7 @@ scheduler_events = {
 #		"hackon.tasks.all"
 #	],
 	"daily": [
-	     "hackon.hackon.utils.event_scheduler"
+	     "hackon.hackon.utils.daily_event_scheduler"
 	]
 #	"hourly": [
 #		"hackon.tasks.hourly"
