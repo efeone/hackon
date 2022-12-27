@@ -18,7 +18,7 @@
  "is_standard": 1,
  "label": "Hackon",
  "links": [],
- "modified": "2022-12-13 12:40:26.576527",
+ "modified": "2022-12-27 11:43:59.199672",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Hackon",
@@ -26,6 +26,12 @@
  "pin_to_bottom": 0,
  "pin_to_top": 1,
  "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Task",
+   "link_to": "Task",
+   "type": "DocType"
+  },
   {
    "doc_view": "List",
    "label": "Team",
@@ -36,6 +42,12 @@
    "doc_view": "List",
    "label": "Event",
    "link_to": "Event",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Project",
+   "link_to": "Project",
    "type": "DocType"
   },
   {
@@ -54,6 +66,12 @@
    "doc_view": "List",
    "label": "Hackon Settings",
    "link_to": "Hackon Settings",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Project Template",
+   "link_to": "Project Template",
    "type": "DocType"
   }
  ]
