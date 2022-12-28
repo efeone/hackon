@@ -7,7 +7,6 @@ from frappe.model.document import Document
 from frappe import _
 
 class Team(Document):
-
 	def after_insert(self):
 		if frappe.session.user == self.owner:
 			if frappe.db.exists('Participant', {'user' : frappe.session.user}):
@@ -54,12 +53,10 @@ def change_team_lead(new_team_lead, name):
 @frappe.whitelist()
 def create_project_custom_button(source_name, target_doc = None):
 	doc = get_mapped_doc(
-        'Team',
-        source_name,
-        {
-        'Team': {
-        'doctype': 'Project',
-        }
+        'Team',source_name,{
+	        'Team': {
+	        	'doctype': 'Project',
+	        }
         })
 	return doc
 
