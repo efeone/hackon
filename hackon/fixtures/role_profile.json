@@ -1,0 +1,152 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-17 16:03:57.749212",
+  "name": "Team Lead",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Team Lead",
+  "roles": [
+   {
+    "parent": "Team Lead",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Team Lead"
+   },
+   {
+    "parent": "Team Lead",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Participant"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-17 16:03:57.823926",
+  "name": "Participant",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Participant",
+  "roles": [
+   {
+    "parent": "Participant",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Participant"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-28 10:53:43.477534",
+  "name": "Super Admin",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Super Admin",
+  "roles": [
+   {
+    "parent": "Super Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Super Admin"
+   },
+   {
+    "parent": "Super Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Host Organizer"
+   },
+   {
+    "parent": "Super Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Projects Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-17 16:03:57.888628",
+  "name": "Host Organizer",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Host Organizer",
+  "roles": [
+   {
+    "parent": "Host Organizer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Event Requester"
+   },
+   {
+    "parent": "Host Organizer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Host Organizer"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-17 16:03:57.968899",
+  "name": "Event Requester",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Event Requester",
+  "roles": [
+   {
+    "parent": "Event Requester",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Event Requester"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-28 10:53:58.942323",
+  "name": "Mentor",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Mentor",
+  "roles": [
+   {
+    "parent": "Mentor",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Mentor"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2022-12-28 10:54:21.018498",
+  "name": "Judge",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Judge",
+  "roles": [
+   {
+    "parent": "Judge",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Judge"
+   }
+  ]
+ }
+]
