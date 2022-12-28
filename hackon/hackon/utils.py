@@ -54,7 +54,7 @@ def create_notification_log(subject, for_user, email_content, document_type, doc
 def update_participant_score(doc):
     ''' Method to add score from task to Team as participant Score '''
     if doc.participant:
-        doc.update_participant_score = doc.update_participant_score if doc.update_participant_score else 0
+        doc.total_weightage_earned = doc.total_weightage_earned if doc.total_weightage_earned else 0
         doc.task_score = doc.task_score if doc.task_score else 0
         frappe.db.set_value('Participant', doc.participant, 'participant_score', doc.total_weightage_earned + doc.task_score)
         team_doc = frappe.get_doc('Team', doc.team)
