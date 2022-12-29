@@ -35,3 +35,17 @@ def validate_event(doc, method):
     '''Method for validations in Event'''
     validate_registration_date(doc)
     validate_starts_on_date(doc)
+
+@frappe.whitelist()
+def set_user_permission(doc, method):
+    team_doc = frappe.get_doc('Team', doc.team)
+    if team_doc:
+        for participant in team_doc.participants:
+            user = frappe.db.get_value('Participant', participant.participant, 'user')
+            if user:
+                if not frappe.db.exists('User Permission', {'user':user, 'allow':'Project', 'for_value':doc.project}):
+                    user_permission = frappe.new_doc('User Permission')
+                    user_permission.user = user
+                    user_permission.allow = 'Project'
+                    user_permission.for_value = doc.project
+                    user_permission.save()
