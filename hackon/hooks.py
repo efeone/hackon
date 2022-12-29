@@ -110,7 +110,8 @@ doc_events = {
 	"Task":{
 		'validate':'hackon.hackon.doc_events.validate_task',
 		'after_insert': 'hackon.hackon.doc_events.task_after_insert',
-		'before_save': 'hackon.hackon.doc_events.task_before_save'
+		'before_save': 'hackon.hackon.doc_events.task_before_save',
+		'on_update': 'hackon.hackon.doc_events.set_user_permission'
 	},
 	"Event":{
        'validate': 'hackon.hackon.doc_events.validate_event'
