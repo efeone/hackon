@@ -2,7 +2,7 @@
  {
   "docstatus": 0,
   "doctype": "Website Sidebar",
-  "modified": "2022-12-15 12:38:18.943836",
+  "modified": "2022-12-31 13:26:22.443908",
   "name": "Participant Portal",
   "parent": null,
   "parentfield": null,
@@ -21,6 +21,14 @@
     "parent": "Participant Portal",
     "parentfield": "sidebar_items",
     "parenttype": "Website Sidebar",
+    "route": "/task-list",
+    "title": "Tasks"
+   },
+   {
+    "group": null,
+    "parent": "Participant Portal",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
     "route": "/event-requests",
     "title": "Event Requests"
    },
@@ -31,6 +39,14 @@
     "parenttype": "Website Sidebar",
     "route": "/participant-registration",
     "title": "Participant Registration"
+   },
+   {
+    "group": null,
+    "parent": "Participant Portal",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/hackon-dashboard",
+    "title": "Hackon Dashboard"
    }
   ],
   "title": "Participant Portal"
