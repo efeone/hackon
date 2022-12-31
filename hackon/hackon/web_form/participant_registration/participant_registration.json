@@ -4,11 +4,11 @@
  "allow_delete": 0,
  "allow_edit": 1,
  "allow_incomplete": 0,
- "allow_multiple": 0,
+ "allow_multiple": 1,
  "allow_print": 0,
  "amount": 0.0,
  "amount_based_on_field": 0,
- "apply_document_permissions": 0,
+ "apply_document_permissions": 1,
  "breadcrumbs": "",
  "button_label": "Save",
  "client_script": "frappe.web_form.on('event', (field, value) => {\n    if(value){\n        filter_teams(value);\n    }\n});\n\nfunction filter_teams(event) {\n    var myurl = 'api/resource/Team?filters=[[\"Team\",\"event\",\"=\", \"' + event + '\" ]]';\n    $.ajax({\n        type: 'GET',\n        url: myurl,\n        success: function(result) {\n            var options = [];\n            for (var i = 0; i < result.data.length; i++) {\n                options.push({\n                    'label': result.data[i].name,\n                    'value': result.data[i].name\n                });\n            }\n            var team_field = frappe.web_form.get_field(\"team\");\n            team_field._data = options;\n            team_field.refresh();\n        }\n    });\n  };",
@@ -22,7 +22,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2022-12-16 17:56:40.926804",
+ "modified": "2022-12-31 13:27:05.482079",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "participant-registration",
@@ -39,22 +39,35 @@
    "enabled": 1,
    "reference_doctype": "Event",
    "role": "Participant",
-   "route": "events",
+   "route": "/events",
    "title": "Events"
+  },
+  {
+   "enabled": 1,
+   "reference_doctype": "Task",
+   "role": "All",
+   "route": "/task-list",
+   "title": "Tasks"
   },
   {
    "enabled": 1,
    "reference_doctype": "Event Request",
    "role": "Event Requester",
-   "route": "event-requests",
+   "route": "/event-requests",
    "title": "Event Requests"
   },
   {
    "enabled": 1,
    "reference_doctype": "Participant",
    "role": "Participant",
-   "route": "participant-registration",
+   "route": "/participant-registration",
    "title": "Participant Registration"
+  },
+  {
+   "enabled": 1,
+   "role": "Participant",
+   "route": "/hackon-dashboard",
+   "title": "Hackon Dashboard"
   }
  ],
  "success_message": "",

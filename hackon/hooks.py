@@ -82,6 +82,7 @@ doctype_js = {
 permission_query_conditions = {
 	"Participant": "hackon.hackon.utils.get_permission_query_conditions_for_participant",
 	"Event Request": "hackon.hackon.utils.get_permission_query_conditions_for_event_request",
+	"Task": "hackon.hackon.utils.get_permission_query_conditions_for_task",
 	"Team": "hackon.hackon.doctype.team.team.get_permission_query_conditions_for_team"
 }
 #
@@ -193,7 +194,7 @@ fixtures = [
 		{"dt": "Workflow State", "filters": [["name", "in", ["Approved by Mentor", "Draft", "Approved by Judges", "Completed","Draft","Pending review","Approved","Rejected"]]]},
 		{"dt": "Workflow", "filters": [["name", "in", ["Task Workflow","Event Request Workflow"]]]},
 		{"dt": "Energy Point Rule", "filters": [["name", "in", ["On Task Completion"]]]},
-		{"dt": "Web Page", "filters": [["name", "in", ["events", "event-view", "event-requests", "sign-up","hackon-dashboard"]]]},
+		{"dt": "Web Page", "filters": [["name", "in", ["events", "event-view", "event-requests", "sign-up", "hackon-dashboard", "task-view", "task-list"]]]},
 		{"dt": "Website Sidebar", "filters": [["name", "in", ["Participant Portal"]]]},
 		{"dt": "Role Profile", "filters": [["name", "in", ["Judge", "Mentor", "Super Admin", "Event Requester", "Host Organizer", "Participant", "Team Lead"]]]}
 

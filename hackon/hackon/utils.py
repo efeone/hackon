@@ -1,6 +1,8 @@
 import frappe
+import json
 from frappe.utils import *
 from frappe import _
+from frappe.utils.file_manager import save_file
 
 @frappe.whitelist()
 def get_total_task_score(project):
@@ -136,3 +138,71 @@ def validate_registration_date(doc):
                 title = _('ALERT !!'),
                 msg = _('The Registration end date should be greater than the Registration start date...!!')
             )
+
+def get_permission_query_conditions_for_task(user):
+    ''' Permission query conditions for Task'''
+    if not user:
+        user = frappe.session.user
+
+    user_roles = frappe.get_roles(user)
+    if ( user == "Administrator" ) or ( 'Super Admin' in user_roles ) or ( "Host Organizer" in user_roles ):
+        return None
+    else:
+        conditions = '`tabTask`.`is_template` = 0 '.format(user = user)
+        return conditions
+
+@frappe.whitelist()
+def attach_file_to_doctype(filedata, doctype, docname):
+    ''' Method to Upload and attach documents to specific document '''
+    if filedata:
+        filedata_json = json.loads(filedata)
+        filedata_list = list(filedata_json["files_data"])
+        for filedata_item in filedata_list:
+            filedoc = save_file(filedata_item["filename"], filedata_item["dataurl"], doctype, docname, decode=True, is_private=0)
+
+@frappe.whitelist()
+def get_description_from_task(docname):
+    ''' Method to get description of Task without any html contents '''
+    desc = frappe.db.get_value('Task', docname, 'description')
+    if not desc:
+        clean_desc = " "
+    else:
+        clean_desc = remove_html_tags(desc)
+    return clean_desc
+
+@frappe.whitelist()
+def remove_html_tags(text):
+    ''' Method to Remove HTML Tags from an text '''
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
+
+@frappe.whitelist()
+def submit_task_response(docname, response_type, response, tools_used=None):
+    '''Method to submit answers of each task from'''
+    if docname and response_type and response:
+        response_field = ''
+        if response_type == 'URL':
+            response_field = 'url'
+        elif response_type == 'Data':
+            response_field = 'data'
+        elif response_type == 'Text':
+            response_field = 'text'
+        if response_field:
+            frappe.db.set_value('Task', docname, response_field, response)
+            frappe.db.commit()
+        if tools_used:
+            task_doc = frappe.get_doc('Task', docname)
+            tools_used = json.loads(tools_used)
+            total_weightage_earned = 0
+            for tool in tools_used:
+                weightage = get_software_tool_weightage_from_task(tool, docname)
+                total_weightage_earned += weightage
+                task_doc.append('tools_used', {
+                    'software_tool': tool
+                })
+                task_doc.append('used_software_tool_details', {
+                    'software_tool': tool,
+                    'weightage': weightage
+                })
+            task_doc.total_weightage_earned = total_weightage_earned
+            task_doc.save()
