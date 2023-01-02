@@ -59,11 +59,12 @@ def update_participant_score(doc):
         doc.total_weightage_earned = doc.total_weightage_earned if doc.total_weightage_earned else 0
         doc.task_score = doc.task_score if doc.task_score else 0
         frappe.db.set_value('Participant', doc.participant, 'participant_score', doc.total_weightage_earned + doc.task_score)
-        team_doc = frappe.get_doc('Team', doc.team)
-        for participant_details in team_doc.participants:
-            if participant_details.participant == doc.participant:
-                participant_details.participant_score = doc.total_weightage_earned + doc.task_score
-        team_doc.save()
+        if doc.team:
+            team_doc = frappe.get_doc('Team', doc.team)
+            for participant_details in team_doc.participants:
+                if participant_details.participant == doc.participant:
+                    participant_details.participant_score = doc.total_weightage_earned + doc.task_score
+            team_doc.save()
 
 @frappe.whitelist()
 def get_software_tool_weightage(software_tool):

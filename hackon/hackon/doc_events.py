@@ -38,8 +38,8 @@ def validate_event(doc, method):
 
 @frappe.whitelist()
 def set_user_permission(doc, method):
-    team_doc = frappe.get_doc('Team', doc.team)
-    if team_doc:
+    if doc.team:
+        team_doc = frappe.get_doc('Team', doc.team)
         for participant in team_doc.participants:
             user = frappe.db.get_value('Participant', participant.participant, 'user')
             if user:
