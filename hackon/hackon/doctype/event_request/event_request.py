@@ -12,7 +12,7 @@ class EventRequest(Document):
 		self.validate_registration_date()
 		self.validate_registration_end_date()
 
-	def on_update_after_submit(self):
+	def on_update(self):
 		if self.workflow_state == 'Approved':
 			create_event(self.name)
 			if frappe.db.exists('Role Profile', 'Host Organizer'):
@@ -32,7 +32,7 @@ class EventRequest(Document):
 				title = _('ALERT !!'),
 				msg = _('The registration end date should be greater than the registration start date....!')
 			)
-			
+
 def create_event(source_name, target_doc = None):
 	''' Method to Create Event from Event Request'''
 	target_doc = get_mapped_doc("Event Request", source_name,{
@@ -44,3 +44,4 @@ def create_event(source_name, target_doc = None):
     	},
 	target_doc)
 	target_doc.save()
+	frappe.db.commit()

@@ -21,8 +21,7 @@
   "no_of_participants_registered",
   "column_break_13",
   "registration_ends_on",
-  "maximum_allowed_team",
-  "amended_from"
+  "maximum_allowed_team"
  ],
  "fields": [
   {
@@ -31,15 +30,6 @@
    "in_list_view": 1,
    "label": "Event Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Event Request",
-   "print_hide": 1,
-   "read_only": 1
   },
   {
    "fieldname": "subject",
@@ -133,9 +123,8 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 11:04:43.640044",
+ "modified": "2023-01-16 13:17:37.660786",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
@@ -151,7 +140,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
@@ -164,7 +152,6 @@
    "report": 1,
    "role": "Super Admin",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
