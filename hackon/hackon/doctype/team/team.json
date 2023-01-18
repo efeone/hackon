@@ -105,6 +105,7 @@
    "label": "Maximum Allowed Team Members"
   },
   {
+   "default": "0",
    "fieldname": "maximum_team_score",
    "fieldtype": "Int",
    "label": "Maximum Team Score",
@@ -113,7 +114,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-24 12:00:56.039033",
+ "modified": "2023-01-18 15:24:46.107066",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
