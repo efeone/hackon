@@ -22,7 +22,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2022-12-31 13:27:05.482079",
+ "modified": "2023-01-18 14:58:59.311580",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "participant-registration",
@@ -30,7 +30,7 @@
  "payment_button_label": "Buy Now",
  "published": 1,
  "route": "participant-registration",
- "route_to_success_link": 0,
+ "route_to_success_link": 1,
  "show_attachments": 0,
  "show_in_grid": 0,
  "show_sidebar": 1,
@@ -71,7 +71,7 @@
   }
  ],
  "success_message": "",
- "success_url": "",
+ "success_url": "/participant-registration",
  "title": "Participant Registration",
  "web_form_fields": [
   {
@@ -381,19 +381,6 @@
    "max_length": 0,
    "max_value": 0,
    "options": "Student\nEmployed\nUnemployed",
-   "read_only": 0,
-   "reqd": 0,
-   "show_in_filter": 0
-  },
-  {
-   "allow_read_on_all_link_options": 0,
-   "fieldname": "education_history",
-   "fieldtype": "Table",
-   "hidden": 0,
-   "label": "Education History",
-   "max_length": 0,
-   "max_value": 0,
-   "options": "Education History",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
