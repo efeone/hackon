@@ -48,4 +48,4 @@ def set_user_permission(doc, method):
                     user_permission.user = user
                     user_permission.allow = 'Project'
                     user_permission.for_value = doc.project
-                    user_permission.save()
+                    user_permission.save(ignore_permissions=True)
