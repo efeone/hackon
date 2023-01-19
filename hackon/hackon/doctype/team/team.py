@@ -95,6 +95,3 @@ def get_permission_query_conditions_for_team(user):
 	elif "Mentor" in user_roles:
 		conditions = '(`tabTeam`.`_assign` like "%{user}%") OR(`tabTeam`.`mentor` = "{user}")'.format(user = user)
 		return conditions
-	else:
-		conditions = '(`tabTeam`.`_assign` like "%{user}%") OR(`tabTeam`.`owner` = "{user}")'.format(user = user)
-		return conditions
