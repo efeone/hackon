@@ -196,7 +196,8 @@ fixtures = [
 		{"dt": "Energy Point Rule", "filters": [["name", "in", ["On Task Completion"]]]},
 		{"dt": "Web Page", "filters": [["name", "in", ["events", "event-view", "event-requests", "sign-up", "hackon-dashboard", "task-view", "task-list"]]]},
 		{"dt": "Website Sidebar", "filters": [["name", "in", ["Participant Portal"]]]},
-		{"dt": "Role Profile", "filters": [["name", "in", ["Judge", "Mentor", "Super Admin", "Event Requester", "Host Organizer", "Participant", "Team Lead"]]]}
+		{"dt": "Role Profile", "filters": [["name", "in", ["Judge", "Mentor", "Super Admin", "Event Requester", "Host Organizer", "Participant", "Team Lead"]]]},
+		{"dt": "Module Profile", "filters": [["name", "in", ["Hackon"]]]}
 
 	]
 
