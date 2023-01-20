@@ -12,11 +12,12 @@
   "team_name",
   "total_active_members",
   "maximum_team_score",
+  "maximum_allowed_team_members",
   "column_break_4",
   "mentor",
+  "create_mentor",
   "team_score",
   "team_lead",
-  "maximum_allowed_team_members",
   "amended_from",
   "participant_details_section",
   "participants"
@@ -110,11 +111,17 @@
    "fieldtype": "Int",
    "label": "Maximum Team Score",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval: !doc.mentor",
+   "fieldname": "create_mentor",
+   "fieldtype": "Button",
+   "label": "Create Mentor"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-18 15:24:46.107066",
+ "modified": "2023-01-20 15:55:09.614446",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Team",
