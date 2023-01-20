@@ -97,7 +97,7 @@ def get_permission_query_conditions_for_participant(user):
         user = frappe.session.user
 
     user_roles = frappe.get_roles(user)
-    if user == "Administrator" or "Host Organizer" in user_roles:
+    if user == "Administrator" or ( "Host Organizer" in user_roles ) or ( "Super Admin" in user_roles ):
         return None
     else:
         conditions = '(`tabParticipant`.`_assign` like "%{user}%") OR(`tabParticipant`.`owner` = "{user}")'.format(user = user)
