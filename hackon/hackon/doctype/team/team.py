@@ -95,3 +95,20 @@ def get_permission_query_conditions_for_team(user):
 	elif "Mentor" in user_roles:
 		conditions = '(`tabTeam`.`_assign` like "%{user}%") OR(`tabTeam`.`mentor` = "{user}")'.format(user = user)
 		return conditions
+
+
+@frappe.whitelist()
+def create_mentor_user(full_name, email_id, team_name):
+	''' Method to create Mentor user '''
+	user_doc = frappe.new_doc('User')
+	user_doc.email = email_id
+	user_doc.first_name = full_name
+	user_doc.send_welcome_email = 0
+	if frappe.db.exists('Module Profile', 'Hackon'):
+		user_doc.module_profile = 'Hackon'
+	if frappe.db.exists('Role Profile', 'Mentor'):
+		user_doc.role_profile_name = 'Mentor'
+	user_doc.save(ignore_permissions=True)
+	if team_name:
+		frappe.db.set_value('Team', team_name, 'mentor', user_doc.name )
+	return True

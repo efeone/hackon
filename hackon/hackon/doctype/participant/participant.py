@@ -22,6 +22,7 @@ class Participant(Document):
 
 	def on_update(self):
 		self.set_participant_to_team()
+		self.assign_to_team_lead()
 
 	def set_participant_to_team(self):
 		''' Method to Add Participants to the Team'''
@@ -36,6 +37,25 @@ class Participant(Document):
 				new_participant = team_doc.append('participants')
 				new_participant.participant = self.name
 				team_doc.save()
+
+	def assign_to_team_lead(self):
+		''' Method to set assign participant to team lead'''
+		if self.team:
+			team_lead = frappe.db.get_value('Team', self.team, 'team_lead')
+			if team_lead:
+				team_lead_user = frappe.db.get_value('Participant', team_lead, 'user')
+				if team_lead_user:
+					doc = frappe.new_doc('DocShare')
+					doc.user = team_lead_user
+					doc.share_doctype = 'Participant'
+					doc.share_name = self.name
+					doc.read = 1
+					doc.write = 1
+					doc.notify_by_email = 1
+					doc.flags.ignore_validate = True
+					doc.flags.ignore_permissions = True
+					doc.save()
+					frappe.db.commit()
 
 @frappe.whitelist()
 def validate_team(team):

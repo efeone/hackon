@@ -26,6 +26,11 @@ frappe.ui.form.on('Team', {
 				});
 			});
 		}
+	},
+	create_mentor: function(frm){
+		if(!frm.doc.mentor){
+				create_mentor(frm);
+		}
 	}
 });
 
@@ -56,6 +61,45 @@ function new_team_lead(frm){
 						 args:{
 							 		'new_team_lead' : values.new_team_lead,
 									'name' : frm.doc.name
+								},
+						 callback:function(r){
+							 if (r){
+								 frm.reload_doc()
+							 }
+						 }
+					 })
+				 }
+		   }
+	  });
+	  d.show();
+}
+
+function create_mentor(frm){
+	 let d = new frappe.ui.Dialog({
+    	title: 'Change Team Lead',
+	    fields: [
+	        {
+	            label: 'Full Name',
+	            fieldname: 'full_name',
+	            fieldtype: 'Data'
+	        },
+					{
+	            label: 'Email Id',
+	            fieldname: 'email_id',
+	            fieldtype: 'Data',
+							options: 'Email'
+	        }
+	    ],
+			primary_action_label: 'Create',
+		  primary_action(values) {
+				 d.hide();
+				 if (values){
+					 frappe.call({
+						 method: 'hackon.hackon.doctype.team.team.create_mentor_user',
+						 args:{
+							 		'full_name' : values.full_name,
+									'email_id' : values.email_id,
+									'team_name': frm.doc.name
 								},
 						 callback:function(r){
 							 if (r){
