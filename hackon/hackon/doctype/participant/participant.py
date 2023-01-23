@@ -17,6 +17,9 @@ class Participant(Document):
 				self.team = self.new_team
 
 	def validate(self):
+		if not self.maximum_participant_score:
+			self.maximum_participant_score = frappe.db.get_single_value("Hackon Settings", "maximum_participant_score")
+
 		if self.team:
 			validate_team(self.team)
 

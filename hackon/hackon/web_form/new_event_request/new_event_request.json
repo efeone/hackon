@@ -20,7 +20,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2022-12-17 16:17:19.482405",
+ "modified": "2023-01-23 11:49:50.907868",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "new-event-request",
@@ -202,7 +202,7 @@
    "default": "0",
    "fieldname": "no_of_participants_registered",
    "fieldtype": "Int",
-   "hidden": 0,
+   "hidden": 1,
    "label": "No of Participants Registered",
    "max_length": 0,
    "max_value": 0,
@@ -256,19 +256,6 @@
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
-   "reqd": 0,
-   "show_in_filter": 0
-  },
-  {
-   "allow_read_on_all_link_options": 0,
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "hidden": 0,
-   "label": "Amended From",
-   "max_length": 0,
-   "max_value": 0,
-   "options": "Event Request",
-   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   }

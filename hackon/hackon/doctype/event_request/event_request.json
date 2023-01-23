@@ -13,6 +13,7 @@
   "column_break_5",
   "starts_on",
   "ends_on",
+  "status",
   "registration_details_section",
   "registration_starts_on",
   "mode",
@@ -120,11 +121,17 @@
    "fieldname": "ends_on",
    "fieldtype": "Datetime",
    "label": "Ends on"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClose"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-16 13:17:37.660786",
+ "modified": "2023-01-23 14:24:00.007770",
  "modified_by": "Administrator",
  "module": "Hackon",
  "name": "Event Request",
