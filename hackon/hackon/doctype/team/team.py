@@ -5,6 +5,7 @@ import frappe
 from frappe.model.mapper import *
 from frappe.model.document import Document
 from frappe import _
+from hackon.hackon.utils import change_user_role
 
 class Team(Document):
 	def after_insert(self):
@@ -42,14 +43,20 @@ class Team(Document):
 def change_team_lead(new_team_lead, name):
 	if frappe.db.exists('Team', name):
 		doc_name = frappe.get_doc('Team',name)
-		doc_name.team_lead = new_team_lead
 		doc_name.save()
 		if doc_name.team_lead:
 			frappe.db.set_value('Participant',doc_name.team_lead,'team_lead',0)
 			doc_name.team_lead = new_team_lead
 			frappe.db.set_value('Participant',new_team_lead,'team_lead',1)
+			user_id = frappe.db.get_value('Participant', new_team_lead, 'user')
+			change_participant_to_team_lead(user_id)
 			doc_name.save()
+		frappe.db.commit()
 		return True
+
+def change_participant_to_team_lead(user_id):
+	if frappe.db.exists('Role Profile', 'Team Lead'):
+		change_user_role(user_id, 'Team Lead')
 
 @frappe.whitelist()
 def create_project_custom_button(source_name, target_doc = None):
