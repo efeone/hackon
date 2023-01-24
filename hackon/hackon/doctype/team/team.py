@@ -17,7 +17,7 @@ class Team(Document):
 				frappe.db.commit()
 
 	def validate(self):
-		self.validation_of_team_score()
+		self.validate_team_score()
 		self.total_active_members = len(self.participants)
 		score = 0
 		for participant in self.participants:
@@ -26,11 +26,12 @@ class Team(Document):
 		if score:
 			self.team_score = float(score)
 
-	def validation_of_team_score(self):
-		if self.team_score > self.maximum_team_score:
-			frappe.throw(title = _('ALERT !!'),
-				msg = _('Team Score Greater than Maximum Team Score..!')
-			)
+	def validate_team_score(self):
+		if self.team_score and self.maximum_team_score:
+			if self.team_score > self.maximum_team_score:
+				frappe.throw(title = _('ALERT !!'),
+					msg = _('Team Score Greater than Maximum Team Score..!')
+				)
 
 
 	def on_update(self):
