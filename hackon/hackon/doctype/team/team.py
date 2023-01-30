@@ -36,8 +36,21 @@ class Team(Document):
 
 
 	def on_update(self):
+		self.set_user_permission()
 		if not self.team_lead:
 			set_team_lead_if_not_set(self.name)
+
+	def set_user_permission(self):
+		if self.participants:
+			for participant in self.participants:
+				user_id = frappe.db.get_value('Participant', participant.participant, 'user')
+				if user_id:
+					if not frappe.db.exists('User Permission', {'user':user_id, 'allow':'Team', 'for_value':self.name}):
+						user_permission = frappe.new_doc('User Permission')
+						user_permission.user = user_id
+						user_permission.allow = 'Team'
+						user_permission.for_value = self.name
+						user_permission.save(ignore_permissions=True)
 
 @frappe.whitelist()
 def change_team_lead(new_team_lead, name):

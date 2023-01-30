@@ -49,3 +49,13 @@ def set_user_permission(doc, method):
                     user_permission.allow = 'Project'
                     user_permission.for_value = doc.project
                     user_permission.save(ignore_permissions=True)
+
+@frappe.whitelist()
+def set_user_permission_for_user(doc, method):
+    if doc.name:
+        if not frappe.db.exists('User Permission', {'user':doc.name, 'allow':'User', 'for_value':doc.name}):
+            user_permission = frappe.new_doc('User Permission')
+            user_permission.user = doc.name
+            user_permission.allow = 'User'
+            user_permission.for_value = doc.name
+            user_permission.save(ignore_permissions=True)
