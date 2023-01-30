@@ -116,7 +116,7 @@ doc_events = {
 
 	},
 	"User":{
-			'after_insert':'hackon.hackon.doc_events.set_user_permission_for_user'
+			'on_update':'hackon.hackon.doc_events.set_user_permission_for_user'
 	},
 	"Event":{
        'validate': 'hackon.hackon.doc_events.validate_event'
