@@ -63,3 +63,10 @@ def set_user_permission_for_user(doc, method):
                 user_permission.allow = 'User'
                 user_permission.for_value = doc.name
                 user_permission.save(ignore_permissions=True)
+
+
+@frappe.whitelist()
+def user_after_insert(doc, method):
+    if not doc.module_profile:
+        doc.module_profile = 'Hackon'
+        doc.save()
