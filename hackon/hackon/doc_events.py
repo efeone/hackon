@@ -56,11 +56,7 @@ def set_user_permission_for_user(doc, method):
     '''Method to set User Permissions for user on user creation'''
     if doc.name:
         user_roles = frappe.get_roles(doc.name)
-        if (("Host Organizer" in user_roles) or ("Super Admin" in user_roles)):
-            if frappe.db.exists('User Permission', {'user':doc.name, 'allow':'User', 'for_value':doc.name}):
-                user_permission = frappe.get_doc('User Permission', {'user':doc.name, 'allow':'User', 'for_value':doc.name})
-                user_permission.delete()
-        elif user_roles:
+        if user_roles and ("Participant" in user_roles):
             if not frappe.db.exists('User Permission', {'user':doc.name, 'allow':'User', 'for_value':doc.name}):
                 user_permission = frappe.new_doc('User Permission')
                 user_permission.user = doc.name
