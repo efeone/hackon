@@ -113,14 +113,14 @@ doc_events = {
 		'after_insert': 'hackon.hackon.doc_events.task_after_insert',
 		'before_save': 'hackon.hackon.doc_events.task_before_save',
 		'on_update': 	'hackon.hackon.doc_events.set_user_permission',
-
 	},
 	"User":{
-			'on_update':'hackon.hackon.doc_events.set_user_permission_for_user'
+		'after_insert':'hackon.hackon.doc_events.user_after_insert',
+		'on_update':'hackon.hackon.doc_events.set_user_permission_for_user'
 	},
 	"Event":{
-       'validate': 'hackon.hackon.doc_events.validate_event'
-   }
+		'validate': 'hackon.hackon.doc_events.validate_event'
+	}
 }
 
 # Scheduled Tasks
