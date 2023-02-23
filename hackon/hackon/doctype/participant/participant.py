@@ -27,6 +27,9 @@ class Participant(Document):
 		self.set_participant_to_team()
 		self.assign_to_team_lead()
 
+	def on_trash(self):
+		self.remove_participant_from_team()
+
 	def set_participant_to_team(self):
 		''' Method to Add Participants to the Team'''
 		if self.team:
@@ -40,6 +43,18 @@ class Participant(Document):
 				new_participant = team_doc.append('participants')
 				new_participant.participant = self.name
 				team_doc.save()
+
+	def remove_participant_from_team(self):
+		''' Method to remove Participants from Team'''
+		if self.team:
+			team_doc = frappe.get_doc('Team', self.team)
+			if team_doc.participants:
+				for participant in team_doc.participants:
+					if participant.participant == self.name:
+						participant.delete()
+			team_doc.save(ignore_permissions=True)
+			frappe.db.commit()
+
 
 	def assign_to_team_lead(self):
 		''' Method to set assign participant to team lead'''
